@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 import com.project.schoolsystem.controller.SubjectsController;
 import com.project.schoolsystem.exceptions.InvalidIdException;
 import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
@@ -26,8 +28,8 @@ public class SubjectsApplication {
 			}
 			System.out.print("Enter the name of Subject:");
 			String name = sc.nextLine();
-			subjects.setSubject_id(id);
-			subjects.setSubject_name(name);
+			subjects.setSubjectId(id);
+			subjects.setSubjectName(name);
 			subjectsController.addSubjectsDetails(subjects);
 		}
 		System.out.println("Case 1: Adding Subjects Details is Completed");
@@ -35,10 +37,10 @@ public class SubjectsApplication {
 
 	static SubjectsController subjectsController = new SubjectsController();
 
-	// static Logger logger=Logger.getLogger("SubjectsApplication.class");
+	 static Logger logger=Logger.getLogger("SubjectsApplication.class");
 	public static void main(String args[]) throws InvalidIdException, InvalidUserChoiceException {
 
-		// logger.info("In Subjects Application");
+		logger.info("In Subjects Application");
 		while (true) {
 			System.out.println("====== Subjects Application======");
 			System.out.println("0.======Exit======");
@@ -63,8 +65,8 @@ public class SubjectsApplication {
 				Subjects subjects = new Subjects();
 				List<Subjects> subjectsList = new ArrayList<Subjects>();
 				Scanner sc = new Scanner(System.in);
-				int readChoice = sc.nextInt();
-				switch (readChoice) {
+				int choice = sc.nextInt();
+				switch (choice) {
 				case 1: {
 					System.out.println("Reading All Subjects Details");
 					subjectsList = subjectsController.readAllSubjectsDetails();
@@ -80,7 +82,7 @@ public class SubjectsApplication {
 					System.out.println(subjects);
 					System.out.println("Case 2: Reading Subjects Details is Completed");
 					break;
-				   }
+				}
 				}
 				break;
 			}

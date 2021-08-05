@@ -1,40 +1,50 @@
 package com.project.schoolsystem.model;
 
 public class School {
-	private Integer school_id;
-	private String school_name;
-    private String school_address;
-    public School() {
-    	
-    }
-	public School(Integer school_id, String school_name, String school_address) {
-		super();
-		this.school_id = school_id;
-		this.school_name = school_name;
-		this.school_address = school_address;
+	private Integer schoolId;
+	private String schoolName;
+	private String schoolAddress;
+
+	public School() {
+
 	}
-	public Integer getSchool_id() {
-		return school_id;
+
+	public Integer getSchoolId() {
+		return schoolId;
 	}
-	public void setSchool_id(Integer school_id) {
-		this.school_id = school_id;
+
+	public void setSchoolId(Integer schoolId) {
+		this.schoolId = schoolId;
 	}
-	public String getSchool_name() {
-		return school_name;
+
+	public String getSchoolName() {
+		return schoolName;
 	}
-	public void setSchool_name(String school_name) {
-		this.school_name = school_name;
+
+	public void setSchoolName(String schoolName) {
+		this.schoolName = schoolName;
 	}
-	public String getSchool_address() {
-		return school_address;
+
+	public String getSchoolAddress() {
+		return schoolAddress;
 	}
-	public void setSchool_address(String school_address) {
-		this.school_address = school_address;
+
+	public void setSchoolAddress(String schoolAddress) {
+		this.schoolAddress = schoolAddress;
 	}
+
 	@Override
 	public String toString() {
-		return "School [school_id=" + school_id + ", school_name=" + school_name + ", school_address=" + school_address
-				+ "]";
+		return "School [schoolId=" + schoolId + ", schoolName=" + schoolName + ", schoolAddress=" + schoolAddress + "]";
 	}
-    
+
+	public School(Integer schoolId, String schoolName, String schoolAddress) {
+		super();
+		this.schoolId = schoolId;
+		this.schoolName = schoolName;
+		this.schoolAddress = schoolAddress;
+	}
+	
+
+	
 }

@@ -83,7 +83,7 @@ public class ClassesApplication {
 					System.out.println(classes);
 					System.out.println("Case 2: Reading Classes Details is Completed");
 					break;
-				   }
+				}
 				}
 				break;
 			}

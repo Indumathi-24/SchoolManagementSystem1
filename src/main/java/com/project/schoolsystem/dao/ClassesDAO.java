@@ -8,8 +8,12 @@ import com.project.schoolsystem.model.Classes;
 
 public interface ClassesDAO {
 	public void addClassesDetails(Classes Classes);
+
 	public List<Classes> readAllClassesDetails();
+
 	public Classes readClassesDetailsByRoomNo();
+
 	public void updateClassesDetails() throws InvalidRoomNoException, InvalidUserChoiceException;
+
 	public void deleteClassesDetails() throws InvalidRoomNoException;
 }

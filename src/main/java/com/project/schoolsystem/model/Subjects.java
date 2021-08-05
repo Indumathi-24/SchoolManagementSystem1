@@ -1,33 +1,39 @@
 package com.project.schoolsystem.model;
 
 public class Subjects {
-    private Integer subject_id;
-    private String subject_name;
-    public Subjects() {
-    	
-    }
-    
-	public Subjects(Integer subject_id, String subject_name) {
-		super();
-		this.subject_id = subject_id;
-		this.subject_name = subject_name;
+	private Integer subjectId;
+	private String subjectName;
+
+	public Subjects() {
+
 	}
 
-	public Integer getSubject_id() {
-		return subject_id;
+	public Integer getSubjectId() {
+		return subjectId;
 	}
-	public void setSubject_id(Integer subject_id) {
-		this.subject_id = subject_id;
+
+	public void setSubjectId(Integer subjectId) {
+		this.subjectId = subjectId;
 	}
-	public String getSubject_name() {
-		return subject_name;
+
+	public String getSubjectName() {
+		return subjectName;
 	}
-	public void setSubject_name(String subject_name) {
-		this.subject_name = subject_name;
+
+	public void setSubjectName(String subjectName) {
+		this.subjectName = subjectName;
 	}
+
 	@Override
 	public String toString() {
-		return "Subjects [subject_id=" + subject_id + ", subject_name=" + subject_name + "]";
+		return "Subjects [subjectId=" + subjectId + ", subjectName=" + subjectName + "]";
 	}
-    
+
+	public Subjects(Integer subjectId, String subjectName) {
+		super();
+		this.subjectId = subjectId;
+		this.subjectName = subjectName;
+	}
+
+	
 }

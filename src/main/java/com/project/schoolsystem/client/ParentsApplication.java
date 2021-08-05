@@ -83,7 +83,7 @@ public class ParentsApplication {
 					System.out.println(parents);
 					System.out.println("Case 2: Reading Parents Details is Completed");
 					break;
-				   }
+				}
 				}
 				break;
 			}
@@ -104,5 +104,5 @@ public class ParentsApplication {
 			}
 
 		}
-}
+	}
 }

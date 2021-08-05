@@ -1,0 +1,31 @@
+2021-08-05 18:26:26 INFO  class:51 - In Student Application
+2021-08-05 18:26:45 INFO  class:26 - In  Student Controller
+2021-08-05 18:26:45 INFO  class:27 - In Read All Student Details Method
+2021-08-05 18:26:45 INFO  class:24 - In Read All Student Details Method
+2021-08-05 18:26:45 INFO  class:41 - In  Student DAO
+2021-08-05 18:26:45 INFO  class:42 - In Read All Student Details Method
+2021-08-05 19:44:36 INFO  class:51 - In Student Application
+2021-08-05 19:46:14 INFO  class:20 - In Student Controller
+2021-08-05 19:46:14 INFO  class:21 - In Add Student Details Method
+2021-08-05 19:46:14 INFO  class:19 - In  Student Service
+2021-08-05 19:46:14 INFO  class:20 - In Add Student Details Method
+2021-08-05 19:46:14 INFO  class:21 - In Student DAO
+2021-08-05 19:46:14 INFO  class:22 - In Add Student Details Method
+2021-08-05 19:46:25 INFO  class:38 - In  Student Controller
+2021-08-05 19:46:25 INFO  class:39 - In Read Student Details Method
+2021-08-05 19:46:25 INFO  class:33 - In  Student Service
+2021-08-05 19:46:25 INFO  class:34 - In Read Student Details Method
+2021-08-05 19:46:25 INFO  class:68 - In  Student DAO
+2021-08-05 19:46:25 INFO  class:69 - In Read Student Details Method
+2021-08-05 22:30:34 INFO  class:52 - In Student Application
+2021-08-05 22:31:15 INFO  class:26 - In  Student Controller
+2021-08-05 22:31:15 INFO  class:27 - In Read All Student Details Method
+2021-08-05 22:31:15 INFO  class:25 - In Read All Student Details Method
+2021-08-05 22:31:15 INFO  class:43 - In  Student DAO
+2021-08-05 22:31:15 INFO  class:44 - In Read All Student Details Method
+2021-08-05 22:31:47 INFO  class:49 - In  Student Controller
+2021-08-05 22:31:47 INFO  class:50 - In Update Student Details Method
+2021-08-05 22:31:47 INFO  class:46 - In  Student Service
+2021-08-05 22:31:47 INFO  class:47 - In Update Student Details Method
+2021-08-05 22:31:47 INFO  class:99 - In  Student DAO
+2021-08-05 22:31:47 INFO  class:100 - In Update Student Details Method

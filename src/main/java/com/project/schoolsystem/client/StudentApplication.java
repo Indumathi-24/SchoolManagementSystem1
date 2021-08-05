@@ -20,24 +20,31 @@ public class StudentApplication {
 		System.out.println("Adding Students Details");
 		for (int i = 0; i < number; i++) {
 			Student student = new Student();
+			System.out.print("Enter roll No:");
 			int rollNo = sc.nextInt();
 			sc.nextLine();
 			if (rollNo < 1) {
 				throw new InvalidRollNoException("Roll NO is Invalid");
 			}
+			System.out.print("Enter name:");
 			String name = sc.nextLine();
+			System.out.print("Enter address:");
 			String address = sc.nextLine();
+			System.out.print("Enter dob:");
 			String dob = sc.nextLine();
+			System.out.print("Enter standard:");
 			String standard = sc.nextLine();
+			System.out.print("Enter room No:");
 			int roomNo = sc.nextInt();
+			System.out.print("Enter school id:");
 			int id = sc.nextInt();
-			student.setStudent_rollNo(rollNo);
-			student.setStudent_name(name);
-			student.setStudent_dob(dob);
-			student.setStudent_address(address);
-			student.setStudent_standard(standard);
-			student.setClasses_roomNo(roomNo);
-			student.setSchool_id(id);
+			student.setStudentRollNo(rollNo);
+			student.setStudentName(name);
+			student.setStudentDob(dob);
+			student.setStudentAddress(address);
+			student.setStudentStandard(standard);
+			student.setClassesRoomNo(roomNo);
+			student.setSchoolId(id);
 			studentController.addStudentDetails(student);
 		}
 		System.out.println("Case 1: Adding Students Details is Completed");
@@ -45,10 +52,11 @@ public class StudentApplication {
 
 	static StudentController studentController = new StudentController();
 
-	// static Logger logger=Logger.getLogger("StudentApplication.class");
-	public static void main(String args[]) throws InvalidRollNoException, InvalidUserChoiceException {
+	static Logger logger = Logger.getLogger("StudentApplication.class");
 
-		// logger.info("In Student Application");
+	public static void main(String args[]) throws InvalidUserChoiceException {
+
+		logger.info("In Student Application");
 		while (true) {
 			System.out.println("====== Student Application======");
 			System.out.println("0.======Exit======");
@@ -65,7 +73,11 @@ public class StudentApplication {
 				break;
 			}
 			case 1: {
-				addStudent();
+				try {
+					addStudent();
+				} catch (InvalidRollNoException e) {
+					e.printStackTrace();
+				}
 				break;
 			}
 			case 2: {
@@ -73,8 +85,8 @@ public class StudentApplication {
 				Student student = new Student();
 				List<Student> studentList = new ArrayList<Student>();
 				Scanner sc = new Scanner(System.in);
-				int readChoice = sc.nextInt();
-				switch (readChoice) {
+				int choice = sc.nextInt();
+				switch (choice) {
 				case 1: {
 					System.out.println("Reading All Student Details");
 					studentList = studentController.readAllStudentDetails();
@@ -96,13 +108,21 @@ public class StudentApplication {
 			}
 			case 3: {
 				System.out.println("Updating Students Details");
-				studentController.updateStudentDetails();
+				try {
+					studentController.updateStudentDetails();
+				} catch (InvalidRollNoException | InvalidUserChoiceException e) {
+					logger.info(e.getMessage());
+				}
 				System.out.println("Case 3: Updating Students Details is Completed");
 				break;
 			}
 			case 4: {
 				System.out.println("Deleting Student Details");
-				studentController.deleteStudentDetails();
+				try {
+					studentController.deleteStudentDetails();
+				} catch (InvalidRollNoException e) {
+					e.printStackTrace();
+				}
 				System.out.println("Case 4: Deleting Students Details is Completed");
 				break;
 			}
