@@ -1,24 +1,24 @@
 package com.project.schoolsystem.model;
 
 public class Marks {
-	private Integer student_rollNo;
+	private Integer studentRollNo;
 	private Integer tamil;
 	private Integer english;
 	private Integer maths;
 	private Integer science;
-	private Integer social_science;
+	private Integer socialScience;
 	private Integer evs;
 
 	public Marks() {
 
 	}
 
-	public Integer getStudent_rollNo() {
-		return student_rollNo;
+	public Integer getStudentRollNo() {
+		return studentRollNo;
 	}
 
-	public void setStudent_rollNo(Integer student_rollNo) {
-		this.student_rollNo = student_rollNo;
+	public void setStudentRollNo(Integer studentRollNo) {
+		this.studentRollNo = studentRollNo;
 	}
 
 	public Integer getTamil() {
@@ -53,12 +53,12 @@ public class Marks {
 		this.science = science;
 	}
 
-	public Integer getSocial_science() {
-		return social_science;
+	public Integer getSocialScience() {
+		return socialScience;
 	}
 
-	public void setSocial_science(Integer social_science) {
-		this.social_science = social_science;
+	public void setSocialScience(Integer socialScience) {
+		this.socialScience = socialScience;
 	}
 
 	public Integer getEvs() {
@@ -69,22 +69,23 @@ public class Marks {
 		this.evs = evs;
 	}
 
-	public Marks(Integer student_rollNo, Integer tamil, Integer english, Integer maths, Integer science,
-			Integer social_science, Integer evs) {
+	@Override
+	public String toString() {
+		return "Marks [studentRollNo=" + studentRollNo + ", tamil=" + tamil + ", english=" + english + ", maths="
+				+ maths + ", science=" + science + ", socialScience=" + socialScience + ", evs=" + evs + "]";
+	}
+
+	public Marks(Integer studentRollNo, Integer tamil, Integer english, Integer maths, Integer science,
+			Integer socialScience, Integer evs) {
 		super();
-		this.student_rollNo = student_rollNo;
+		this.studentRollNo = studentRollNo;
 		this.tamil = tamil;
 		this.english = english;
 		this.maths = maths;
 		this.science = science;
-		this.social_science = social_science;
+		this.socialScience = socialScience;
 		this.evs = evs;
 	}
 
-	@Override
-	public String toString() {
-		return "Marks [student_rollNo=" + student_rollNo + ", tamil=" + tamil + ", english=" + english + ", maths="
-				+ maths + ", science=" + science + ", social_science=" + social_science + ", evs=" + evs + "]";
-	}
-
+	
 }

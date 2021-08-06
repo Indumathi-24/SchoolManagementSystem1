@@ -1,8 +1,11 @@
 package com.project.schoolsystem.client;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Scanner;
+
+import org.apache.log4j.Logger;
 
 import com.project.schoolsystem.controller.MarksController;
 import com.project.schoolsystem.exceptions.InvalidRollNoException;
@@ -10,7 +13,7 @@ import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
 import com.project.schoolsystem.model.Marks;
 
 public class MarksApplication {
-	public static void addMarks() throws InvalidRollNoException {
+	public static void addMarks() throws InvalidRollNoException  {
 		System.out.print("Enter the number of Students Marks:");
 		Scanner sc = new Scanner(System.in);
 		int number = sc.nextInt();
@@ -33,16 +36,16 @@ public class MarksApplication {
 			System.out.print("Enter the Science Mark:");
 			Integer science = sc.nextInt();
 			System.out.print("Enter the Social Science Mark:");
-			Integer social_science = sc.nextInt();
+			Integer socialScience = sc.nextInt();
 			System.out.print("Enter the EVS Mark:");
 			Integer evs = sc.nextInt();
-			marks.setStudent_rollNo(rollNo);
+			marks.setStudentRollNo(rollNo);
 			marks.setTamil(tamil);
 			marks.setEnglish(english);
 			marks.setMaths(maths);
 			marks.setScience(science);
-			marks.setSocial_science(social_science);
-			marks.setEvs(social_science);
+			marks.setSocialScience(socialScience);
+			marks.setEvs(evs);
 			marksController.addMarksDetails(marks);
 		}
 		System.out.println("Case 1: Adding Marks Details is Completed");
@@ -50,10 +53,10 @@ public class MarksApplication {
 
 	static MarksController marksController = new MarksController();
 
-	// static Logger logger=Logger.getLogger("MarksApplication.class");
-	public static void main(String args[]) throws InvalidRollNoException, InvalidUserChoiceException {
+	static Logger logger=Logger.getLogger("MarksApplication.class");
+	public static void main(String args[]) throws InvalidRollNoException,InvalidUserChoiceException {
 
-		// logger.info("In Marks Application");
+		logger.info("In Marks Application");
 		while (true) {
 			System.out.println("====== Marks Application======");
 			System.out.println("0.======Exit======");
@@ -78,8 +81,8 @@ public class MarksApplication {
 				Marks marks = new Marks();
 				List<Marks> marksList = new ArrayList<Marks>();
 				Scanner sc = new Scanner(System.in);
-				int readChoice = sc.nextInt();
-				switch (readChoice) {
+				int choice = sc.nextInt();
+				switch (choice) {
 				case 1: {
 					System.out.println("Reading All Marks Details");
 					marksList = marksController.readAllMarksDetails();
@@ -101,13 +104,23 @@ public class MarksApplication {
 			}
 			case 3: {
 				System.out.println("Updating Marks Details");
-				marksController.updateMarksDetails();
+				try {
+					marksController.updateMarksDetails();
+				} catch (InvalidRollNoException | InvalidUserChoiceException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				System.out.println("Case 3: Updating Markss Details is Completed");
 				break;
 			}
 			case 4: {
 				System.out.println("Deleting Marks Details");
-				marksController.deleteMarksDetails();
+				try {
+					marksController.deleteMarksDetails();
+				} catch (InvalidRollNoException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				System.out.println("Case 4: Deleting Markss Details is Completed");
 				break;
 			}

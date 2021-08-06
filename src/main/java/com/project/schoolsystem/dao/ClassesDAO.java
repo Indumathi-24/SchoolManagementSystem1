@@ -15,5 +15,5 @@ public interface ClassesDAO {
 
 	public void updateClassesDetails() throws InvalidRoomNoException, InvalidUserChoiceException;
 
-	public void deleteClassesDetails() throws InvalidRoomNoException;
+	public void deleteClassesDetails() ;
 }

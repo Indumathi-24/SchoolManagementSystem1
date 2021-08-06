@@ -9,6 +9,7 @@ import com.project.schoolsystem.dao.StudentDAO;
 import com.project.schoolsystem.dao.StudentDAOImpl;
 import com.project.schoolsystem.exceptions.InvalidRollNoException;
 import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
+import com.project.schoolsystem.exceptions.ServiceException;
 import com.project.schoolsystem.model.Student;
 
 public class StudentServiceImpl implements StudentService {
@@ -42,16 +43,17 @@ public class StudentServiceImpl implements StudentService {
 
 	}
 
-	public void updateStudentDetails() throws InvalidUserChoiceException, InvalidRollNoException {
+	public void updateStudentDetails()  {
 		logger.info("In  Student Service");
 		logger.info("In Update Student Details Method");
 		studentDAO.updateStudentDetails();
-
+		
 	}
 
-	public void deleteStudentDetails() throws InvalidRollNoException {
+	public void deleteStudentDetails() throws ServiceException  {
 		logger.info("In Student Service");
 		logger.info("In Delete Student Details Method");
-		studentDAO.deleteStudentDetails();
-	}
+
+	   studentDAO.deleteStudentDetails();
+	}		
 }

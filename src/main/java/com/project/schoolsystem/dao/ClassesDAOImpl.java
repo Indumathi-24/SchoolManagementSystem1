@@ -3,6 +3,7 @@ package com.project.schoolsystem.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +41,8 @@ public class ClassesDAOImpl implements ClassesDAO {
 		List<Classes> classesList = new ArrayList<Classes>();
 		try (Connection con = DBUtil.getConnection()) {
 			Statement st = con.createStatement();
-			String selectQuery = "select* from Classes";
-			ResultSet resultSet = st.executeQuery(selectQuery);
+			String query = "select* from Classes";
+			ResultSet resultSet = st.executeQuery(query);
 			while (resultSet.next()) {
 				Classes classes = new Classes();
 				classes.setClassesRoomNo(resultSet.getInt(1));
@@ -65,11 +66,11 @@ public class ClassesDAOImpl implements ClassesDAO {
 		int roomNo = sc.nextInt();
 		Classes classes = new Classes();
 		try (Connection con = DBUtil.getConnection()) {
-			PreparedStatement st = con.prepareStatement("select* from Classes where classes_roomNo=?");
+			PreparedStatement st = con.prepareStatement("select* from Classes where classesRoomNo=?");
 			st.setInt(1, roomNo);
 			ResultSet resultSet = st.executeQuery();
 			while (resultSet.next()) {
-				classes.setClasses_roomNo(resultSet.getInt(1));
+				classes.setClassesRoomNo(resultSet.getInt(1));
 				classes.setStandard(resultSet.getString(2));
 				classes.setSection(resultSet.getString(3));
 			}
@@ -82,8 +83,8 @@ public class ClassesDAOImpl implements ClassesDAO {
 	}
 
 	public void updateClassesDetails() throws InvalidRoomNoException, InvalidUserChoiceException {
-		// logger.info("In classes DAO");
-		// logger.info("In Update classes Details Method");
+		logger.info("In classes DAO");
+		logger.info("In Update classes Details Method");
 		try (Connection con = DBUtil.getConnection()) {
 			PreparedStatement pst = null;
 			Scanner scanner = new Scanner(System.in);
@@ -95,14 +96,14 @@ public class ClassesDAOImpl implements ClassesDAO {
 			System.out.println("1. Update standard");
 			System.out.println("2. Update section");
 			System.out.println("Enter user choice");
-			int userChoice = scanner.nextInt();
-			switch (userChoice) {
+			int choice = scanner.nextInt();
+			switch (choice) {
 			case 1: {
 				System.out.println("Enter the standard of the classes to be updated:");
 				scanner.nextLine();
-				String updateStandard = scanner.nextLine();
-				pst = con.prepareStatement("update classes set standard=? where classes_roomNo=?");
-				pst.setString(1, updateStandard);
+				String standard = scanner.nextLine();
+				pst = con.prepareStatement("update classes set standard=? where classesRoomNo=?");
+				pst.setString(1, standard);
 				pst.setInt(2, roomNo);
 				pst.executeUpdate();
 				System.out.println("Rows Updated");
@@ -112,9 +113,9 @@ public class ClassesDAOImpl implements ClassesDAO {
 			case 2: {
 				System.out.println("Enter the Section of the classes to be updated:");
 				scanner.nextLine();
-				String updateSection = scanner.nextLine();
-				pst = con.prepareStatement("update classes set section=? where classes_roomNo=?");
-				pst.setString(1, updateSection);
+				String section = scanner.nextLine();
+				pst = con.prepareStatement("update classes set section=? where classesRoomNo=?");
+				pst.setString(1, section);
 				pst.setInt(2, roomNo);
 				pst.executeUpdate();
 				System.out.println("Rows Updated");
@@ -130,9 +131,9 @@ public class ClassesDAOImpl implements ClassesDAO {
 		}
 	}
 
-	public void deleteClassesDetails() throws InvalidRoomNoException {
-		// logger.info("In classes DAO");
-		// logger.info("In Delete classes Details Method");
+	public void deleteClassesDetails(){
+		logger.info("In classes DAO");
+		logger.info("In Delete classes Details Method");
 		try (Connection con = DBUtil.getConnection()) {
 			PreparedStatement pst = null;
 			System.out.print("Enter the room no of the classes to be deleted:");
@@ -141,13 +142,13 @@ public class ClassesDAOImpl implements ClassesDAO {
 			if (roomNo < 1) {
 				throw new InvalidRoomNoException("Room No is Invalid");
 			}
-			String deleteQuery = "delete from classes where classes_roomNo=?";
-			pst = con.prepareStatement(deleteQuery);
+			String query = "delete from classes where classesRoomNo=?";
+			pst = con.prepareStatement(query);
 			pst.setInt(1, roomNo);
 			pst.execute();
 			System.out.println("Rows Deleted");
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException | InvalidRoomNoException e) {
+			System.out.println(e.getMessage());
 		}
 	}
 }

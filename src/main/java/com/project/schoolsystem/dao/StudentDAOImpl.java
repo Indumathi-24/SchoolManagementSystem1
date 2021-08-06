@@ -3,6 +3,7 @@ package com.project.schoolsystem.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +34,7 @@ public class StudentDAOImpl implements StudentDAO {
 			pst.setInt(7, student.getSchoolId());
 			pst.executeUpdate();
 			System.out.println("Student Details Inserted");
-		} catch (Exception e) {
+		} catch (SQLException e) {
 
 			e.printStackTrace();
 		}
@@ -58,7 +59,7 @@ public class StudentDAOImpl implements StudentDAO {
 				student.setSchoolId(resultSet.getInt(7));
 				studentList.add(student);
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		System.out.println("Student Details Retrieved");
@@ -74,7 +75,7 @@ public class StudentDAOImpl implements StudentDAO {
 		int rno = sc.nextInt();
 		Student student = new Student();
 		try (Connection con = DBUtil.getConnection()) {
-			PreparedStatement st = con.prepareStatement("select * from Student where studentRollNo=?");
+			PreparedStatement st = con.prepareStatement("select * from Student where student_rollNo=?");
 			st.setInt(1, rno);
 			ResultSet resultSet = st.executeQuery();
 			while (resultSet.next()) {
@@ -87,7 +88,7 @@ public class StudentDAOImpl implements StudentDAO {
 				student.setSchoolId(resultSet.getInt(7));
 
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		System.out.println("Student Details Retrieved");
@@ -95,7 +96,7 @@ public class StudentDAOImpl implements StudentDAO {
 
 	}
 
-	public void updateStudentDetails() throws InvalidRollNoException, InvalidUserChoiceException {
+	public void updateStudentDetails() {
 		logger.info("In  Student DAO");
 		logger.info("In Update Student Details Method");
 		try (Connection con = DBUtil.getConnection()) {
@@ -117,7 +118,7 @@ public class StudentDAOImpl implements StudentDAO {
 				System.out.println("Enter the name of the student to be updated");
 				scanner.nextLine();
 				String name = scanner.nextLine();
-				pst = con.prepareStatement("update Student set studentName=? where studentRollNo=?");
+				pst = con.prepareStatement("update Student set student_name=? where student_rollNo=?");
 				pst.setString(1, name);
 				pst.setInt(2, rno);
 				pst.executeUpdate();
@@ -129,7 +130,7 @@ public class StudentDAOImpl implements StudentDAO {
 				System.out.println("Enter the Address of the student to be updated");
 				scanner.nextLine();
 				String address = scanner.nextLine();
-				pst = con.prepareStatement("update Student set studentAddress=? where studentRollNo=?");
+				pst = con.prepareStatement("update Student set student_address=? where student_rollNo=?");
 				pst.setString(1, address);
 				pst.setInt(2, rno);
 				pst.executeUpdate();
@@ -141,7 +142,7 @@ public class StudentDAOImpl implements StudentDAO {
 				System.out.println("Enter the dob of the student to be updated");
 				scanner.nextLine();
 				String dob = scanner.nextLine();
-				pst = con.prepareStatement("update Student set studentDob=? where studentRollNo=?");
+				pst = con.prepareStatement("update Student set student_dob=? where student_rollNo=?");
 				pst.setString(1, dob);
 				pst.setInt(2, rno);
 				pst.executeUpdate();
@@ -153,7 +154,7 @@ public class StudentDAOImpl implements StudentDAO {
 				System.out.println("Enter the standard of the student to be updated");
 				scanner.nextLine();
 				String standard = scanner.nextLine();
-				pst = con.prepareStatement("update Student set studentStandard=? where studentRollNo=?");
+				pst = con.prepareStatement("update Student set student_standard=? where student_rollNo=?");
 				pst.setString(1, standard);
 				pst.setInt(2, rno);
 				pst.executeUpdate();
@@ -166,12 +167,12 @@ public class StudentDAOImpl implements StudentDAO {
 
 			}
 
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException | InvalidUserChoiceException | InvalidRollNoException e) {
+			logger.warn(e.getMessage());
 		}
 	}
 
-	public void deleteStudentDetails() throws InvalidRollNoException {
+	public void deleteStudentDetails() {
 		logger.info("In  Student DAO");
 		logger.info("In Delete Student Details Method");
 		try (Connection con = DBUtil.getConnection()) {
@@ -182,13 +183,13 @@ public class StudentDAOImpl implements StudentDAO {
 			if (rno < 1) {
 				throw new InvalidRollNoException("Roll No is Invalid");
 			}
-			String query = "delete from Student where studentRollNo=?";
+			String query = "delete from Student where student_rollNo=?";
 			pst = con.prepareStatement(query);
 			pst.setInt(1, rno);
 			pst.execute();
 			System.out.println("Rows Deleted");
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException | InvalidRollNoException e) {
+			logger.warn(e.getMessage());
 		}
 	}
 }

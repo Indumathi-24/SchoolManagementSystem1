@@ -5,8 +5,10 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.project.schoolsystem.exceptions.ControllerException;
 import com.project.schoolsystem.exceptions.InvalidRollNoException;
 import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
+import com.project.schoolsystem.exceptions.ServiceException;
 import com.project.schoolsystem.model.Student;
 import com.project.schoolsystem.service.StudentService;
 import com.project.schoolsystem.service.StudentServiceImpl;
@@ -45,16 +47,21 @@ public class StudentController {
 
 	}
 
-	public void updateStudentDetails() throws InvalidRollNoException, InvalidUserChoiceException {
+	public void updateStudentDetails()  {
 		logger.info("In  Student Controller");
 		logger.info("In Update Student Details Method");
 		studentServiceImpl.updateStudentDetails();
 	}
 
-	public void deleteStudentDetails() throws InvalidRollNoException {
+	public void deleteStudentDetails() throws ControllerException  {
 		logger.info("In Student Controller");
 		logger.info("In Delete Student Details Method");
-		studentServiceImpl.deleteStudentDetails();
+		try {
+			studentServiceImpl.deleteStudentDetails();
+		} catch (ServiceException e) {
+			throw new ControllerException(e.getMessage());
+			
+		}
 
 	}
 }

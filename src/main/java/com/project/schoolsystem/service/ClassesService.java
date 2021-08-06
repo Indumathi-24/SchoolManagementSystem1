@@ -7,7 +7,7 @@ import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
 import com.project.schoolsystem.model.Classes;
 
 public interface ClassesService {
-	public void addClassesDetails(Classes Classes);
+	public void addClassesDetails(Classes classes);
 
 	public List<Classes> readAllClassesDetails();
 

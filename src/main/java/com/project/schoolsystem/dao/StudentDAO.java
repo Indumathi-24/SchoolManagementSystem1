@@ -13,7 +13,7 @@ public interface StudentDAO {
 
 	public Student readStudentDetailsById();
 
-	public void updateStudentDetails() throws InvalidRollNoException, InvalidUserChoiceException;
+	public void updateStudentDetails();
 
-	public void deleteStudentDetails() throws InvalidRollNoException;
+	public void deleteStudentDetails();
 }

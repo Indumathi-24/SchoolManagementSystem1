@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.project.schoolsystem.exceptions.InvalidRollNoException;
 import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
+import com.project.schoolsystem.exceptions.ServiceException;
 import com.project.schoolsystem.model.Student;
 
 public interface StudentService {
@@ -13,7 +14,8 @@ public interface StudentService {
 
 	public Student readStudentDetailsById();
 
-	public void updateStudentDetails() throws InvalidRollNoException, InvalidUserChoiceException;
+	public void updateStudentDetails() ;
 
-	public void deleteStudentDetails() throws InvalidRollNoException;
+	public void deleteStudentDetails() throws ServiceException;
 }
+
