@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 import com.project.schoolsystem.controller.ClassesController;
 import com.project.schoolsystem.exceptions.InvalidRoomNoException;
 import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
@@ -24,12 +26,12 @@ public class ClassesApplication {
 			if (roomNo < 1) {
 				throw new InvalidRoomNoException("Room NO is Invalid");
 			}
-			System.out.print("Enter the standard of Classes:");
+			System.out.print("Enter the standard:");
 			String standard = sc.nextLine();
-			System.out.print("Enter the section of Classes:");
+			System.out.print("Enter the section:");
 			String section = sc.nextLine();
 			classes.setStandard(standard);
-			classes.setClasses_roomNo(roomNo);
+			classes.setClassesRoomNo(roomNo);
 			classes.setSection(section);
 			classesController.addClassesDetails(classes);
 		}
@@ -38,10 +40,10 @@ public class ClassesApplication {
 
 	static ClassesController classesController = new ClassesController();
 
-	// static Logger logger=Logger.getLogger("ClassesApplication.class");
+	static Logger logger=Logger.getLogger("ClassesApplication.class");
 	public static void main(String args[]) throws InvalidRoomNoException, InvalidUserChoiceException {
 
-		// logger.info("In Classes Application");
+		logger.info("In Classes Application");
 		while (true) {
 			System.out.println("====== Classes Application======");
 			System.out.println("0.======Exit======");
@@ -66,8 +68,8 @@ public class ClassesApplication {
 				Classes classes = new Classes();
 				List<Classes> classesList = new ArrayList<Classes>();
 				Scanner sc = new Scanner(System.in);
-				int readChoice = sc.nextInt();
-				switch (readChoice) {
+				int choice = sc.nextInt();
+				switch (choice) {
 				case 1: {
 					System.out.println("Reading All Classes Details");
 					classesList = classesController.readAllClassesDetails();

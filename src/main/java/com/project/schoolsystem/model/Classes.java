@@ -3,17 +3,10 @@ package com.project.schoolsystem.model;
 public class Classes {
 	private String standard;
 	private String section;
-	private Integer classes_roomNo;
+	private Integer classesRoomNo;
 
 	public Classes() {
 
-	}
-
-	public Classes(String standard, String section, Integer classes_roomNo) {
-		super();
-		this.standard = standard;
-		this.section = section;
-		this.classes_roomNo = classes_roomNo;
 	}
 
 	public String getStandard() {
@@ -32,17 +25,25 @@ public class Classes {
 		this.section = section;
 	}
 
-	public Integer getClasses_roomNo() {
-		return classes_roomNo;
+	public Integer getClassesRoomNo() {
+		return classesRoomNo;
 	}
 
-	public void setClasses_roomNo(Integer classes_roomNo) {
-		this.classes_roomNo = classes_roomNo;
+	public void setClassesRoomNo(Integer classesRoomNo) {
+		this.classesRoomNo = classesRoomNo;
 	}
 
 	@Override
 	public String toString() {
-		return "Classes [standard=" + standard + ", section=" + section + ", classes_roomNo=" + classes_roomNo + "]";
+		return "Classes [standard=" + standard + ", section=" + section + ", classesRoomNo=" + classesRoomNo + "]";
 	}
 
+	public Classes(String standard, String section, Integer classesRoomNo) {
+		super();
+		this.standard = standard;
+		this.section = section;
+		this.classesRoomNo = classesRoomNo;
+	}
+
+	
 }

@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 import com.project.schoolsystem.exceptions.InvalidRollNoException;
 import com.project.schoolsystem.exceptions.InvalidRoomNoException;
 import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
@@ -15,13 +17,14 @@ import com.project.schoolsystem.model.Classes;
 import com.project.schoolsystem.util.DBUtil;
 
 public class ClassesDAOImpl implements ClassesDAO {
+	static Logger logger=Logger.getLogger("ClassesDAOImpl.class");
 	public void addClassesDetails(Classes classes) {
-		// logger.info("In classes DAO");
-		// logger.info("In Add classes Details Method");
+		logger.info("In classes DAO");
+		logger.info("In Add classes Details Method");
 		try (Connection con = DBUtil.getConnection()) {
-			String insertQuery = "insert into Classes values(?,?,?)";
-			PreparedStatement pst = con.prepareStatement(insertQuery);
-			pst.setInt(1, classes.getClasses_roomNo());
+			String query = "insert into Classes values(?,?,?)";
+			PreparedStatement pst = con.prepareStatement(query);
+			pst.setInt(1, classes.getClassesRoomNo());
 			pst.setString(2, classes.getStandard());
 			pst.setString(3, classes.getSection());
 			pst.executeUpdate();
@@ -32,8 +35,8 @@ public class ClassesDAOImpl implements ClassesDAO {
 	}
 
 	public List<Classes> readAllClassesDetails() {
-		// logger.info("In classes DAO");
-		// logger.info("In Read All classes Details Method");
+		logger.info("In classes DAO");
+		logger.info("In Read All classes Details Method");
 		List<Classes> classesList = new ArrayList<Classes>();
 		try (Connection con = DBUtil.getConnection()) {
 			Statement st = con.createStatement();
@@ -41,7 +44,7 @@ public class ClassesDAOImpl implements ClassesDAO {
 			ResultSet resultSet = st.executeQuery(selectQuery);
 			while (resultSet.next()) {
 				Classes classes = new Classes();
-				classes.setClasses_roomNo(resultSet.getInt(1));
+				classes.setClassesRoomNo(resultSet.getInt(1));
 				classes.setStandard(resultSet.getString(2));
 				classes.setSection(resultSet.getString(3));
 				classesList.add(classes);
@@ -55,8 +58,8 @@ public class ClassesDAOImpl implements ClassesDAO {
 	}
 
 	public Classes readClassesDetailsByRoomNo() {
-		// logger.info("In classes DAO");
-		// logger.info("In Read classes Details Method");
+		 logger.info("In classes DAO");
+		 logger.info("In Read classes Details Method");
 		System.out.print("Enter the room No of the classes to be retrieved:");
 		Scanner sc = new Scanner(System.in);
 		int roomNo = sc.nextInt();
