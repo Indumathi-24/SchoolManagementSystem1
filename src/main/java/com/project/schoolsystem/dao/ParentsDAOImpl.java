@@ -3,10 +3,13 @@ package com.project.schoolsystem.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import org.apache.log4j.Logger;
 
 import com.project.schoolsystem.exceptions.InvalidRollNoException;
 import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
@@ -14,41 +17,40 @@ import com.project.schoolsystem.model.Parents;
 import com.project.schoolsystem.util.DBUtil;
 
 public class ParentsDAOImpl implements ParentsDAO {
-	// static Logger logger=Logger.getLogger("ParentsDAOImpl.class");
+	static Logger logger = Logger.getLogger("ParentsDAOImpl.class");
 
 	public void addParentsDetails(Parents Parents) {
-		// logger.info("In Parents DAO");
-		// logger.info("In Add Parents Details Method");
+		logger.info("In Parents DAO");
+		logger.info("In Add Parents Details Method");
 		try (Connection con = DBUtil.getConnection()) {
-			String insertQuery = "insert into Parents values(?,?,?)";
-			PreparedStatement pst = con.prepareStatement(insertQuery);
-			pst.setInt(1, Parents.getStudent_rollNo());
-			pst.setString(2, Parents.getMother_name());
-			pst.setString(3, Parents.getFather_name());
+			String query = "insert into Parents values(?,?,?)";
+			PreparedStatement pst = con.prepareStatement(query);
+			pst.setInt(1, Parents.getStudentRollNo());
+			pst.setString(2, Parents.getMotherName());
+			pst.setString(3, Parents.getFatherName());
 			pst.executeUpdate();
 			System.out.println("Parents Details Inserted");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public List<Parents> readAllParentsDetails() {
-		// logger.info("In Parents DAO");
-		// logger.info("In Read All Parents Details Method");
+		logger.info("In Parents DAO");
+		logger.info("In Read All Parents Details Method");
 		List<Parents> parentsList = new ArrayList<Parents>();
 		try (Connection con = DBUtil.getConnection()) {
 			Statement st = con.createStatement();
-			String selectQuery = "select* from Parents";
-			ResultSet resultSet = st.executeQuery(selectQuery);
+			String query = "select* from Parents";
+			ResultSet resultSet = st.executeQuery(query);
 			while (resultSet.next()) {
 				Parents parents = new Parents();
-				parents.setStudent_rollNo(resultSet.getInt(1));
-				parents.setMother_name(resultSet.getString(2));
-				parents.setFather_name(resultSet.getString(3));
+				parents.setStudentRollNo(resultSet.getInt(1));
+				parents.setMotherName(resultSet.getString(2));
+				parents.setFatherName(resultSet.getString(3));
 				parentsList.add(parents);
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		System.out.println("Parents Details Retrieved");
@@ -57,33 +59,36 @@ public class ParentsDAOImpl implements ParentsDAO {
 	}
 
 	public Parents readParentsDetailsByStudentRollNo() {
-		// logger.info("In Parents DAO");
-		// logger.info("In Read Parents Details Method");
+		logger.info("In Parents DAO");
+		logger.info("In Read Parents Details Method");
 		System.out.println("Enter the roll No of the student whose Parents has to be retrieved");
 		Scanner sc = new Scanner(System.in);
 		int rno = sc.nextInt();
 		Parents parents = new Parents();
 		try (Connection con = DBUtil.getConnection()) {
+			if (rno < 1) {
+				throw new InvalidRollNoException("Roll No is Invalid");
+			}
 			PreparedStatement st = con.prepareStatement("select* from Parents where student_rollNo=?");
 			st.setInt(1, rno);
 			ResultSet resultSet = st.executeQuery();
 			while (resultSet.next()) {
-				parents.setStudent_rollNo(resultSet.getInt(1));
-				parents.setMother_name(resultSet.getString(2));
-				parents.setFather_name(resultSet.getString(3));
+				parents.setStudentRollNo(resultSet.getInt(1));
+				parents.setMotherName(resultSet.getString(2));
+				parents.setFatherName(resultSet.getString(3));
 
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException | InvalidRollNoException e) {
+			logger.info(e.getMessage());
 		}
 		System.out.println("Parents Details Retrieved");
 		return parents;
 
 	}
 
-	public void updateParentsDetails() throws InvalidRollNoException, InvalidUserChoiceException {
-		// logger.info("In Parents DAO");
-		// logger.info("In Update Parents Details Method");
+	public void updateParentsDetails() {
+		logger.info("In Parents DAO");
+		logger.info("In Update Parents Details Method");
 		try (Connection con = DBUtil.getConnection()) {
 			PreparedStatement pst = null;
 			Scanner scanner = new Scanner(System.in);
@@ -100,9 +105,9 @@ public class ParentsDAOImpl implements ParentsDAO {
 			case 1: {
 				System.out.println("Enter the mother name to be updated");
 				scanner.nextLine();
-				String updateMotherName = scanner.nextLine();
+				String motherName = scanner.nextLine();
 				pst = con.prepareStatement("update Parents set mother_name=? where student_rollNo=?");
-				pst.setString(1, updateMotherName);
+				pst.setString(1, motherName);
 				pst.setInt(2, rno);
 				pst.executeUpdate();
 				System.out.println("Rows Updated");
@@ -112,9 +117,9 @@ public class ParentsDAOImpl implements ParentsDAO {
 			case 2: {
 				System.out.println("Enter the Father name to be updated");
 				scanner.nextLine();
-				String updateFatherName = scanner.nextLine();
+				String fatherName = scanner.nextLine();
 				pst = con.prepareStatement("update Parents set father_name=? where student_rollNo=?");
-				pst.setString(1, updateFatherName);
+				pst.setString(1, fatherName);
 				pst.setInt(2, rno);
 				pst.executeUpdate();
 				System.out.println("Rows Updated");
@@ -125,14 +130,14 @@ public class ParentsDAOImpl implements ParentsDAO {
 
 			}
 
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException | InvalidRollNoException | InvalidUserChoiceException e) {
+			logger.warn(e.getMessage());
 		}
 	}
 
-	public void deleteParentsDetails() throws InvalidRollNoException {
-		// logger.info("In Parents DAO");
-		// logger.info("In Delete Parents Details Method");
+	public void deleteParentsDetails() {
+		logger.info("In Parents DAO");
+		logger.info("In Delete Parents Details Method");
 		try (Connection con = DBUtil.getConnection()) {
 			PreparedStatement pst = null;
 			System.out.println("Enter the roll no of the student whose parents has to be deleted");
@@ -141,13 +146,14 @@ public class ParentsDAOImpl implements ParentsDAO {
 			if (rno < 1) {
 				throw new InvalidRollNoException("Roll No is Invalid");
 			}
-			String deleteQuery = "delete from Parents where student_rollNo=?";
-			pst = con.prepareStatement(deleteQuery);
+			String query = "delete from Parents where student_rollNo=?";
+			pst = con.prepareStatement(query);
 			pst.setInt(1, rno);
 			pst.execute();
 			System.out.println("Rows Deleted");
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException | InvalidRollNoException e) {
+			logger.warn(e.getMessage());
 		}
 	}
+
 }

@@ -1,12 +1,10 @@
 package com.project.schoolsystem.controller;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
-
-import com.project.schoolsystem.exceptions.InvalidRollNoException;
-import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
 import com.project.schoolsystem.model.Marks;
 import com.project.schoolsystem.service.MarksService;
 import com.project.schoolsystem.service.MarksServiceImpl;
@@ -14,7 +12,8 @@ import com.project.schoolsystem.service.MarksServiceImpl;
 public class MarksController {
 	MarksService marksServiceImpl = new MarksServiceImpl();
 
-	static Logger logger=Logger.getLogger("MarksController.class");
+	static Logger logger = Logger.getLogger("MarksController.class");
+
 	public void addMarksDetails(Marks marks) {
 		logger.info("In Marks Controller");
 		logger.info("In Add Marks Details Method");
@@ -23,15 +22,10 @@ public class MarksController {
 	}
 
 	public List<Marks> readAllMarksDetails() {
-		 logger.info("In Marks Controller");
-		 logger.info("In Read All Marks Details Method");
+		logger.info("In Marks Controller");
+		logger.info("In Read All Marks Details Method");
 		List<Marks> marksList = new ArrayList<Marks>();
-		try {
-			marksList = marksServiceImpl.readAllMarksDetails();
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}
+		marksList = marksServiceImpl.readAllMarksDetails();
 		return marksList;
 
 	}
@@ -46,16 +40,22 @@ public class MarksController {
 
 	}
 
-	public void updateMarksDetails() throws InvalidRollNoException, InvalidUserChoiceException {
+	public void updateMarksDetails() {
 		logger.info("In Marks Controller");
 		logger.info("In Update Marks Details Method");
 		marksServiceImpl.updateMarksDetails();
 	}
 
-	public void deleteMarksDetails() throws InvalidRollNoException {
+	public void deleteMarksDetails() {
 		logger.info("In Marks Controller");
 		logger.info("In Delete Marks Details Method");
 		marksServiceImpl.deleteMarksDetails();
 
+	}
+
+	public void totalMarksByStudentRollNo() {
+		logger.info("In Marks Service");
+		logger.info("In total Marks Method");
+		marksServiceImpl.totalMarksByStudentRollNo();
 	}
 }

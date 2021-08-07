@@ -1,6 +1,7 @@
 package com.project.schoolsystem.dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,15 +11,14 @@ import java.util.List;
 import java.util.Scanner;
 
 import org.apache.log4j.Logger;
-
-import com.project.schoolsystem.exceptions.InvalidRollNoException;
 import com.project.schoolsystem.exceptions.InvalidRoomNoException;
 import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
 import com.project.schoolsystem.model.Classes;
 import com.project.schoolsystem.util.DBUtil;
 
 public class ClassesDAOImpl implements ClassesDAO {
-	static Logger logger=Logger.getLogger("ClassesDAOImpl.class");
+	static Logger logger = Logger.getLogger("ClassesDAOImpl.class");
+
 	public void addClassesDetails(Classes classes) {
 		logger.info("In classes DAO");
 		logger.info("In Add classes Details Method");
@@ -30,7 +30,7 @@ public class ClassesDAOImpl implements ClassesDAO {
 			pst.setString(3, classes.getSection());
 			pst.executeUpdate();
 			System.out.println("Classes Details Inserted");
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
@@ -50,7 +50,7 @@ public class ClassesDAOImpl implements ClassesDAO {
 				classes.setSection(resultSet.getString(3));
 				classesList.add(classes);
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		System.out.println("Classes Details Retrieved");
@@ -59,14 +59,14 @@ public class ClassesDAOImpl implements ClassesDAO {
 	}
 
 	public Classes readClassesDetailsByRoomNo() {
-		 logger.info("In classes DAO");
-		 logger.info("In Read classes Details Method");
+		logger.info("In classes DAO");
+		logger.info("In Read classes Details Method");
 		System.out.print("Enter the room No of the classes to be retrieved:");
 		Scanner sc = new Scanner(System.in);
 		int roomNo = sc.nextInt();
 		Classes classes = new Classes();
 		try (Connection con = DBUtil.getConnection()) {
-			PreparedStatement st = con.prepareStatement("select* from Classes where classesRoomNo=?");
+			PreparedStatement st = con.prepareStatement("select* from Classes where classes_roomNo=?");
 			st.setInt(1, roomNo);
 			ResultSet resultSet = st.executeQuery();
 			while (resultSet.next()) {
@@ -74,7 +74,7 @@ public class ClassesDAOImpl implements ClassesDAO {
 				classes.setStandard(resultSet.getString(2));
 				classes.setSection(resultSet.getString(3));
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		System.out.println("classes Details Retrieved");
@@ -82,7 +82,7 @@ public class ClassesDAOImpl implements ClassesDAO {
 
 	}
 
-	public void updateClassesDetails() throws InvalidRoomNoException, InvalidUserChoiceException {
+	public void updateClassesDetails() {
 		logger.info("In classes DAO");
 		logger.info("In Update classes Details Method");
 		try (Connection con = DBUtil.getConnection()) {
@@ -102,7 +102,7 @@ public class ClassesDAOImpl implements ClassesDAO {
 				System.out.println("Enter the standard of the classes to be updated:");
 				scanner.nextLine();
 				String standard = scanner.nextLine();
-				pst = con.prepareStatement("update classes set standard=? where classesRoomNo=?");
+				pst = con.prepareStatement("update classes set standard=? where classes_roomNo=?");
 				pst.setString(1, standard);
 				pst.setInt(2, roomNo);
 				pst.executeUpdate();
@@ -114,7 +114,7 @@ public class ClassesDAOImpl implements ClassesDAO {
 				System.out.println("Enter the Section of the classes to be updated:");
 				scanner.nextLine();
 				String section = scanner.nextLine();
-				pst = con.prepareStatement("update classes set section=? where classesRoomNo=?");
+				pst = con.prepareStatement("update classes set section=? where classes_roomNo=?");
 				pst.setString(1, section);
 				pst.setInt(2, roomNo);
 				pst.executeUpdate();
@@ -126,12 +126,12 @@ public class ClassesDAOImpl implements ClassesDAO {
 				throw new InvalidUserChoiceException("User choice is Invaild");
 
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException | InvalidUserChoiceException | InvalidRoomNoException e) {
+			logger.warn(e.getMessage());
 		}
 	}
 
-	public void deleteClassesDetails(){
+	public void deleteClassesDetails() {
 		logger.info("In classes DAO");
 		logger.info("In Delete classes Details Method");
 		try (Connection con = DBUtil.getConnection()) {
@@ -142,13 +142,13 @@ public class ClassesDAOImpl implements ClassesDAO {
 			if (roomNo < 1) {
 				throw new InvalidRoomNoException("Room No is Invalid");
 			}
-			String query = "delete from classes where classesRoomNo=?";
+			String query = "delete from classes where classes_roomNo=?";
 			pst = con.prepareStatement(query);
 			pst.setInt(1, roomNo);
 			pst.execute();
 			System.out.println("Rows Deleted");
 		} catch (SQLException | InvalidRoomNoException e) {
-			System.out.println(e.getMessage());
+			logger.warn(e.getMessage());
 		}
 	}
 }

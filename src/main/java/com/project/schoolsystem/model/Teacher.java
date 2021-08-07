@@ -6,7 +6,7 @@ public class Teacher {
 	private String teacherAddress;
 	private String teacherDob;
 	private String teacherStandard;
-	private String teacherDesignation;
+	private String teacherSubject;
 	private Integer classesRoomNo;
 	private Integer schoolId;
 
@@ -54,12 +54,12 @@ public class Teacher {
 		this.teacherStandard = teacherStandard;
 	}
 
-	public String getTeacherDesignation() {
-		return teacherDesignation;
+	public String getTeacherSubject() {
+		return teacherSubject;
 	}
 
-	public void setTeacherDesignation(String teacherDesignation) {
-		this.teacherDesignation = teacherDesignation;
+	public void setTeacherSubject(String teacherSubject) {
+		this.teacherSubject = teacherSubject;
 	}
 
 	public Integer getClassesRoomNo() {
@@ -81,22 +81,21 @@ public class Teacher {
 	@Override
 	public String toString() {
 		return "Teacher [teacherId=" + teacherId + ", teacherName=" + teacherName + ", teacherAddress=" + teacherAddress
-				+ ", teacherDob=" + teacherDob + ", teacherStandard=" + teacherStandard + ", teacherDesignation="
-				+ teacherDesignation + ", classesRoomNo=" + classesRoomNo + ", schoolId=" + schoolId + "]";
+				+ ", teacherDob=" + teacherDob + ", teacherStandard=" + teacherStandard + ", teacherSubject="
+				+ teacherSubject + ", classesRoomNo=" + classesRoomNo + ", schoolId=" + schoolId + "]";
 	}
 
 	public Teacher(Integer teacherId, String teacherName, String teacherAddress, String teacherDob,
-			String teacherStandard, String teacherDesignation, Integer classesRoomNo, Integer schoolId) {
+			String teacherStandard, String teacherSubject, Integer classesRoomNo, Integer schoolId) {
 		super();
 		this.teacherId = teacherId;
 		this.teacherName = teacherName;
 		this.teacherAddress = teacherAddress;
 		this.teacherDob = teacherDob;
 		this.teacherStandard = teacherStandard;
-		this.teacherDesignation = teacherDesignation;
+		this.teacherSubject = teacherSubject;
 		this.classesRoomNo = classesRoomNo;
 		this.schoolId = schoolId;
 	}
 
-	
 }

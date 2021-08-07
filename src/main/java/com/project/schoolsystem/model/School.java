@@ -44,7 +44,5 @@ public class School {
 		this.schoolName = schoolName;
 		this.schoolAddress = schoolAddress;
 	}
-	
 
-	
 }

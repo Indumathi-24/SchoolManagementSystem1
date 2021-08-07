@@ -1,12 +1,10 @@
 package com.project.schoolsystem.controller;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
-
-import com.project.schoolsystem.exceptions.InvalidIdException;
-import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
 import com.project.schoolsystem.model.Subjects;
 import com.project.schoolsystem.service.SubjectsService;
 import com.project.schoolsystem.service.SubjectsServiceImpl;
@@ -14,10 +12,11 @@ import com.project.schoolsystem.service.SubjectsServiceImpl;
 public class SubjectsController {
 	SubjectsService subjectsServiceImpl = new SubjectsServiceImpl();
 
-	static Logger logger=Logger.getLogger("SubjectsController.class");
+	static Logger logger = Logger.getLogger("SubjectsController.class");
+
 	public void addSubjectsDetails(Subjects subjects) {
-		 logger.info("In Subjects Controller");
-		 logger.info("In Add Subjects Details Method");
+		logger.info("In Subjects Controller");
+		logger.info("In Add Subjects Details Method");
 		subjectsServiceImpl.addSubjectsDetails(subjects);
 	}
 
@@ -36,7 +35,7 @@ public class SubjectsController {
 
 	public Subjects readSubjectsDetailsBySubjectId() {
 		logger.info("In Subjects Controller");
-		 logger.info("In Read Subjects Details Method");
+		logger.info("In Read Subjects Details Method");
 		Subjects subjects = new Subjects();
 		subjects = subjectsServiceImpl.readSubjectsDetailsBySubjectId();
 
@@ -44,15 +43,15 @@ public class SubjectsController {
 
 	}
 
-	public void updateSubjectsDetails() throws InvalidIdException, InvalidUserChoiceException {
-		 logger.info("In Subjects Controller");
-		 logger.info("In Update Subjects Details Method");
+	public void updateSubjectsDetails() {
+		logger.info("In Subjects Controller");
+		logger.info("In Update Subjects Details Method");
 		subjectsServiceImpl.updateSubjectsDetails();
 	}
 
-	public void deleteSubjectsDetails() throws InvalidIdException {
-		 logger.info("In Subjects Controller");
-		 logger.info("In Delete Subjects Details Method");
+	public void deleteSubjectsDetails() {
+		logger.info("In Subjects Controller");
+		logger.info("In Delete Subjects Details Method");
 		subjectsServiceImpl.deleteSubjectsDetails();
 
 	}

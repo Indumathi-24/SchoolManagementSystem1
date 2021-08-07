@@ -1,9 +1,6 @@
 package com.project.schoolsystem.service;
 
 import java.util.List;
-
-import com.project.schoolsystem.exceptions.InvalidRollNoException;
-import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
 import com.project.schoolsystem.model.Parents;
 
 public interface ParentsService {
@@ -13,7 +10,8 @@ public interface ParentsService {
 
 	public Parents readParentsDetailsByStudentRollNo();
 
-	public void updateParentsDetails() throws InvalidRollNoException, InvalidUserChoiceException;
+	public void updateParentsDetails();
 
-	public void deleteParentsDetails() throws InvalidRollNoException;
+	public void deleteParentsDetails();
+
 }

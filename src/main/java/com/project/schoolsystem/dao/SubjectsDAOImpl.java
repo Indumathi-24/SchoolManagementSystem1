@@ -3,6 +3,7 @@ package com.project.schoolsystem.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,8 @@ import com.project.schoolsystem.model.Subjects;
 import com.project.schoolsystem.util.DBUtil;
 
 public class SubjectsDAOImpl implements SubjectsDAO {
-	static Logger logger=Logger.getLogger("SubjectsDAOImpl.class");
+	static Logger logger = Logger.getLogger("SubjectsDAOImpl.class");
+
 	public void addSubjectsDetails(Subjects subjects) {
 		logger.info("In Subjects DAO");
 		logger.info("In Add Subjects Details Method");
@@ -27,14 +29,14 @@ public class SubjectsDAOImpl implements SubjectsDAO {
 			pst.setString(2, subjects.getSubjectName());
 			pst.executeUpdate();
 			System.out.println("Subjects Details Inserted");
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public List<Subjects> readAllSubjectsDetails() {
 		logger.info("In Subjects DAO");
-        logger.info("In Read All Subjects Details Method");
+		logger.info("In Read All Subjects Details Method");
 		List<Subjects> subjectsList = new ArrayList<Subjects>();
 		try (Connection con = DBUtil.getConnection()) {
 			Statement st = con.createStatement();
@@ -46,7 +48,7 @@ public class SubjectsDAOImpl implements SubjectsDAO {
 				subjects.setSubjectName(resultSet.getString(2));
 				subjectsList.add(subjects);
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		System.out.println("Subjects Details Retrieved");
@@ -55,29 +57,32 @@ public class SubjectsDAOImpl implements SubjectsDAO {
 	}
 
 	public Subjects readSubjectsDetailsBySubjectId() {
-		 logger.info("In Subjects DAO");
-		 logger.info("In Read Subjects Details Method");
+		logger.info("In Subjects DAO");
+		logger.info("In Read Subjects Details Method");
 		System.out.print("Enter the id of the Subjects to be retrieved:");
 		Scanner sc = new Scanner(System.in);
 		int id = sc.nextInt();
 		Subjects subjects = new Subjects();
 		try (Connection con = DBUtil.getConnection()) {
-			PreparedStatement st = con.prepareStatement("select* from Subjects where subjectId=?");
+			if (id < 1) {
+				throw new InvalidIdException("Id is invalid");
+			}
+			PreparedStatement st = con.prepareStatement("select* from Subjects where subject_id=?");
 			st.setInt(1, id);
 			ResultSet resultSet = st.executeQuery();
 			while (resultSet.next()) {
 				subjects.setSubjectId(resultSet.getInt(1));
 				subjects.setSubjectName(resultSet.getString(2));
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException | InvalidIdException e) {
+			logger.warn(e.getMessage());
 		}
 		System.out.println("Subjects Details Retrieved");
 		return subjects;
 
 	}
 
-	public void updateSubjectsDetails() throws InvalidIdException, InvalidUserChoiceException {
+	public void updateSubjectsDetails() {
 		logger.info("In Subjects DAO");
 		logger.info("In Update Subjects Details Method");
 		try (Connection con = DBUtil.getConnection()) {
@@ -96,7 +101,7 @@ public class SubjectsDAOImpl implements SubjectsDAO {
 				System.out.println("Enter the standard of the Subjects to be updated:");
 				scanner.nextLine();
 				String subjectName = scanner.nextLine();
-				pst = con.prepareStatement("update Subjects set subjectName=? where subjectId=?");
+				pst = con.prepareStatement("update Subjects set subject_name=? where subject_id=?");
 				pst.setString(1, subjectName);
 				pst.setInt(2, id);
 				pst.executeUpdate();
@@ -107,12 +112,12 @@ public class SubjectsDAOImpl implements SubjectsDAO {
 				throw new InvalidUserChoiceException("User choice is Invaild");
 
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException | InvalidUserChoiceException | InvalidIdException e) {
+			logger.warn(e.getMessage());
 		}
 	}
 
-	public void deleteSubjectsDetails() throws InvalidIdException {
+	public void deleteSubjectsDetails() {
 		logger.info("In Subjects DAO");
 		logger.info("In Delete Subjects Details Method");
 		try (Connection con = DBUtil.getConnection()) {
@@ -123,13 +128,13 @@ public class SubjectsDAOImpl implements SubjectsDAO {
 			if (id < 1) {
 				throw new InvalidIdException("Id is Invalid");
 			}
-			String query = "delete from Subjects where subjectId=?";
+			String query = "delete from Subjects where subject_id=?";
 			pst = con.prepareStatement(query);
 			pst.setInt(1, id);
 			pst.execute();
 			System.out.println("Rows Deleted");
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException | InvalidIdException e) {
+			logger.warn(e.getMessage());
 		}
 	}
 }

@@ -192,4 +192,21 @@ public class StudentDAOImpl implements StudentDAO {
 			logger.warn(e.getMessage());
 		}
 	}
+
+	public void studentParentsDetails() {
+		logger.info("In Student DAO");
+		logger.info("In Student Parents Details Method");
+		try (Connection con = DBUtil.getConnection()) {
+			PreparedStatement pst = null;
+			pst = con.prepareStatement(
+					"select s.student_rollNo,s.student_name,p.mother_name,p.father_name from Student s join Parents p on s.student_rollNo=p.student_rollNo");
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				System.out
+						.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }

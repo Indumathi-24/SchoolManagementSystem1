@@ -47,6 +47,4 @@ public class Classes {
 		this.classesRoomNo = classesRoomNo;
 	}
 
-	
-	
 }

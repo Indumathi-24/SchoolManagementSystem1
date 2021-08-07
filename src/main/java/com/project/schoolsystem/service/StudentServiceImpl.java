@@ -1,15 +1,13 @@
 package com.project.schoolsystem.service;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.apache.log4j.Logger;
 
 import com.project.schoolsystem.dao.StudentDAO;
 import com.project.schoolsystem.dao.StudentDAOImpl;
-import com.project.schoolsystem.exceptions.InvalidRollNoException;
-import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
-import com.project.schoolsystem.exceptions.ServiceException;
 import com.project.schoolsystem.model.Student;
 
 public class StudentServiceImpl implements StudentService {
@@ -43,17 +41,23 @@ public class StudentServiceImpl implements StudentService {
 
 	}
 
-	public void updateStudentDetails()  {
+	public void updateStudentDetails() {
 		logger.info("In  Student Service");
 		logger.info("In Update Student Details Method");
 		studentDAO.updateStudentDetails();
-		
+
 	}
 
-	public void deleteStudentDetails() throws ServiceException  {
+	public void deleteStudentDetails() {
 		logger.info("In Student Service");
 		logger.info("In Delete Student Details Method");
 
-	   studentDAO.deleteStudentDetails();
-	}		
+		studentDAO.deleteStudentDetails();
+	}
+
+	public void studentParentsDetails() {
+		logger.info("In Student Service");
+		logger.info("In Student Parents Details Method");
+		studentDAO.studentParentsDetails();
+	}
 }

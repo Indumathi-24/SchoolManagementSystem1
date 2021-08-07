@@ -4,6 +4,7 @@ import java.sql.Connection;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,16 +12,17 @@ import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
-import com.project.schoolsystem.exceptions.InvalidRollNoException;
+import com.project.schoolsystem.exceptions.InvalidIdException;
 import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
 import com.project.schoolsystem.model.Teacher;
 import com.project.schoolsystem.util.DBUtil;
 
 public class TeacherDAOImpl implements TeacherDAO {
-	static Logger logger=Logger.getLogger("SchoolManagementTeacherDAOImpl.class");
+	static Logger logger = Logger.getLogger("TeacherDAOImpl.class");
+
 	public void addTeacherDetails(Teacher teacher) {
 		logger.info("In School Management Teacher DAO");
-	    logger.info("In Add Teacher Details Method");
+		logger.info("In Add Teacher Details Method");
 		try (Connection con = DBUtil.getConnection()) {
 			String query = "insert into Teacher values(?,?,?,?,?,?,?,?)";
 			PreparedStatement pst = con.prepareStatement(query);
@@ -29,18 +31,18 @@ public class TeacherDAOImpl implements TeacherDAO {
 			pst.setString(3, teacher.getTeacherAddress());
 			pst.setString(4, teacher.getTeacherDob());
 			pst.setString(5, teacher.getTeacherStandard());
-			pst.setString(6, teacher.getTeacherDesignation());
+			pst.setString(6, teacher.getTeacherSubject());
 			pst.setInt(7, teacher.getClassesRoomNo());
 			pst.setInt(8, teacher.getSchoolId());
 			pst.executeUpdate();
 			System.out.println("Teacher Details Inserted");
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public List<Teacher> readAllTeacherDetails() {
-	    logger.info("In School Management Teacher DAO");
+		logger.info("In School Management Teacher DAO");
 		logger.info("In Read All Teacher Details Method");
 		List<Teacher> teacherList = new ArrayList<Teacher>();
 		try (Connection con = DBUtil.getConnection()) {
@@ -54,12 +56,12 @@ public class TeacherDAOImpl implements TeacherDAO {
 				teacher.setTeacherAddress(resultSet.getString(3));
 				teacher.setTeacherDob(resultSet.getString(4));
 				teacher.setTeacherStandard(resultSet.getString(5));
-				teacher.setTeacherDesignation(resultSet.getString(6));
+				teacher.setTeacherSubject(resultSet.getString(6));
 				teacher.setClassesRoomNo(resultSet.getInt(7));
 				teacher.setSchoolId(resultSet.getInt(8));
 				teacherList.add(teacher);
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		System.out.println("Teacher Details Retrieved");
@@ -70,13 +72,13 @@ public class TeacherDAOImpl implements TeacherDAO {
 	public Teacher readTeacherDetailsById() {
 		logger.info("In School Management Teacher DAO");
 		logger.info("In Read Teacher Details Method");
-		System.out.println("Enter the roll No of the Teacher to be retrieved");
+		System.out.println("Enter the id of the Teacher to be retrieved");
 		Scanner sc = new Scanner(System.in);
-		int rno = sc.nextInt();
+		int id = sc.nextInt();
 		Teacher teacher = new Teacher();
 		try (Connection con = DBUtil.getConnection()) {
-			PreparedStatement st = con.prepareStatement("select* from Teacher where teacherid=?");
-			st.setInt(1, rno);
+			PreparedStatement st = con.prepareStatement("select* from Teacher where teacher_id=?");
+			st.setInt(1, id);
 			ResultSet resultSet = st.executeQuery();
 			while (resultSet.next()) {
 				teacher.setTeacherId(resultSet.getInt(1));
@@ -84,12 +86,12 @@ public class TeacherDAOImpl implements TeacherDAO {
 				teacher.setTeacherAddress(resultSet.getString(3));
 				teacher.setTeacherDob(resultSet.getString(4));
 				teacher.setTeacherStandard(resultSet.getString(5));
-				teacher.setTeacherDesignation(resultSet.getString(6));
+				teacher.setTeacherSubject(resultSet.getString(6));
 				teacher.setClassesRoomNo(resultSet.getInt(7));
 				teacher.setSchoolId(resultSet.getInt(8));
 
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		System.out.println("Teacher Details Retrieved");
@@ -97,16 +99,16 @@ public class TeacherDAOImpl implements TeacherDAO {
 
 	}
 
-	public void updateTeacherDetails() throws InvalidRollNoException, InvalidUserChoiceException {
-		 logger.info("In School Management Teacher DAO");
-		 logger.info("In Update Teacher Details Method");
+	public void updateTeacherDetails() {
+		logger.info("In School Management Teacher DAO");
+		logger.info("In Update Teacher Details Method");
 		try (Connection con = DBUtil.getConnection()) {
 			PreparedStatement pst = null;
 			Scanner scanner = new Scanner(System.in);
-			System.out.println("Enter the rollNo of the Teacher to be modified");
-			int rno = scanner.nextInt();
-			if (rno < 1) {
-				throw new InvalidRollNoException("Roll No is Invalid");
+			System.out.println("Enter the id of the Teacher to be modified");
+			int id = scanner.nextInt();
+			if (id < 1) {
+				throw new InvalidIdException("Id is Invalid");
 			}
 			System.out.println("1. Update name");
 			System.out.println("2. Update address");
@@ -120,9 +122,9 @@ public class TeacherDAOImpl implements TeacherDAO {
 				System.out.println("Enter the name of the Teacher to be updated");
 				scanner.nextLine();
 				String name = scanner.nextLine();
-				pst = con.prepareStatement("update Teacher set teacherName=? where teacherId=?");
+				pst = con.prepareStatement("update Teacher set teacher_name=? where teacher_id=?");
 				pst.setString(1, name);
-				pst.setInt(2, rno);
+				pst.setInt(2, id);
 				pst.executeUpdate();
 				System.out.println("Rows Updated");
 				break;
@@ -132,9 +134,9 @@ public class TeacherDAOImpl implements TeacherDAO {
 				System.out.println("Enter the Address of the Teacher to be updated");
 				scanner.nextLine();
 				String address = scanner.nextLine();
-				pst = con.prepareStatement("update Teacher set teacherAddress=? where teacherId=?");
+				pst = con.prepareStatement("update Teacher set teacher_address=? where teacher_id=?");
 				pst.setString(1, address);
-				pst.setInt(2, rno);
+				pst.setInt(2, id);
 				pst.executeUpdate();
 				System.out.println("Rows Updated");
 				break;
@@ -143,9 +145,9 @@ public class TeacherDAOImpl implements TeacherDAO {
 				System.out.println("Enter the dob of the Teacher to be updated");
 				scanner.nextLine();
 				String dob = scanner.nextLine();
-				pst = con.prepareStatement("update Teacher set teacherDob=? where teacherId=?");
+				pst = con.prepareStatement("update Teacher set teacher_dob=? where teacher_id=?");
 				pst.setString(1, dob);
-				pst.setInt(2, rno);
+				pst.setInt(2, id);
 				pst.executeUpdate();
 				System.out.println("Rows Updated");
 				break;
@@ -155,9 +157,9 @@ public class TeacherDAOImpl implements TeacherDAO {
 				System.out.println("Enter the standard of the Teacher to be updated");
 				scanner.nextLine();
 				String standard = scanner.nextLine();
-				pst = con.prepareStatement("update Teacher set teacherStandard=? where teacherId=?");
+				pst = con.prepareStatement("update Teacher set teacher_standard=? where teacher_id=?");
 				pst.setString(1, standard);
-				pst.setInt(2, rno);
+				pst.setInt(2, id);
 				pst.executeUpdate();
 				System.out.println("Rows Updated");
 				break;
@@ -166,9 +168,9 @@ public class TeacherDAOImpl implements TeacherDAO {
 				System.out.println("Enter the Designation of the Teacher to be updated");
 				scanner.nextLine();
 				String designation = scanner.nextLine();
-				pst = con.prepareStatement("update Teacher set teacherDesignation=? where teacherId=?");
-				pst.setString(1,designation);
-				pst.setInt(2, rno); 
+				pst = con.prepareStatement("update Teacher set teacher_designation=? where teacher_id=?");
+				pst.setString(1, designation);
+				pst.setInt(2, id);
 				pst.executeUpdate();
 				System.out.println("Rows Updated");
 				break;
@@ -179,29 +181,124 @@ public class TeacherDAOImpl implements TeacherDAO {
 
 			}
 
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException | InvalidUserChoiceException | InvalidIdException e) {
+			logger.warn(e.getMessage());
 		}
 	}
 
-	public void deleteTeacherDetails() throws InvalidRollNoException {
+	public void deleteTeacherDetails() {
 		logger.info("In School Management Teacher DAO");
-	    logger.info("In Delete Teacher Details Method");
+		logger.info("In Delete Teacher Details Method");
 		try (Connection con = DBUtil.getConnection()) {
 			PreparedStatement pst = null;
-			System.out.println("Enter the roll no of the Teacher to be deleted");
+			System.out.println("Enter the id of the Teacher to be deleted");
 			Scanner scanner = new Scanner(System.in);
-			int rno = scanner.nextInt();
-			if (rno < 1) {
-				throw new InvalidRollNoException("Roll No is Invalid");
+			int id = scanner.nextInt();
+			if (id < 1) {
+				throw new InvalidIdException("Id is Invalid");
 			}
-			String query = "delete from Teacher where teacherId=?";
+			String query = "delete from Teacher where teacher_id=?";
 			pst = con.prepareStatement(query);
-			pst.setInt(1, rno);
+			pst.setInt(1, id);
 			pst.execute();
 			System.out.println("Rows Deleted");
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (SQLException | InvalidIdException e) {
+			logger.warn(e.getMessage());
+		}
+	}
+
+	public void getSubjectMarks() {
+		logger.info("In School Management Teacher DAO");
+		logger.info("In Total Subject Marks Details Method");
+		try (Connection con = DBUtil.getConnection()) {
+			PreparedStatement pst = null;
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("1.Tamil Marks");
+			System.out.println("2.English Marks");
+			System.out.println("3.Maths Marks");
+			System.out.println("4.Science Marks");
+			System.out.println("5.Social Science Marks");
+			System.out.println("6.EVS Marks");
+			System.out.println("Enter Choice");
+			int userChoice = scanner.nextInt();
+			switch (userChoice) {
+			case 1: {
+				System.out.println("Enter the id of the Teacher");
+				int id = scanner.nextInt();
+				pst = con.prepareStatement(
+						"select s.student_rollNo,s.student_name,m.tamil from marks m join student s on m.student_rollNo=s.student_rollNo join teacher t on t.classes_roomNo=s.classes_roomNo where teacher_id=?");
+				pst.setInt(1, id);
+				ResultSet rs = pst.executeQuery();
+				while (rs.next()) {
+					System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3));
+				}
+				break;
+			}
+			case 2: {
+				System.out.println("Enter the id of the Teacher");
+				int id = scanner.nextInt();
+				pst = con.prepareStatement(
+						"select s.student_rollNo,s.student_name,m.english from marks m join student s on m.student_rollNo=s.student_rollNo join teacher t on t.classes_roomNo=s.classes_roomNo where teacher_id=?");
+				pst.setInt(1, id);
+				ResultSet rs = pst.executeQuery();
+				while (rs.next()) {
+					System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3));
+				}
+				break;
+			}
+			case 3: {
+				System.out.println("Enter the id of the Teacher");
+				int id = scanner.nextInt();
+				pst = con.prepareStatement(
+						"select s.student_rollNo,s.student_name,m.maths from marks m join student s on m.student_rollNo=s.student_rollNo join teacher t on t.classes_roomNo=s.classes_roomNo where teacher_id=?");
+				pst.setInt(1, id);
+				ResultSet rs = pst.executeQuery();
+				while (rs.next()) {
+					System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3));
+				}
+				break;
+			}
+			case 4: {
+				System.out.println("Enter the id of the Teacher");
+				int id = scanner.nextInt();
+				pst = con.prepareStatement(
+						"select s.student_rollNo,s.student_name,m.science from marks m join student s on m.student_rollNo=s.student_rollNo join teacher t on t.classes_roomNo=s.classes_roomNo where teacher_id=?");
+				pst.setInt(1, id);
+				ResultSet rs = pst.executeQuery();
+				while (rs.next()) {
+					System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3));
+				}
+				break;
+			}
+			case 5: {
+				System.out.println("Enter the id of the Teacher");
+				int id = scanner.nextInt();
+				pst = con.prepareStatement(
+						"select s.student_rollNo,s.student_name,m.social_science from marks m join student s on m.student_rollNo=s.student_rollNo join teacher t on t.classes_roomNo=s.classes_roomNo where teacher_id=?");
+				pst.setInt(1, id);
+				ResultSet rs = pst.executeQuery();
+				while (rs.next()) {
+					System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3));
+				}
+				break;
+			}
+			case 6: {
+				System.out.println("Enter the id of the Teacher");
+				int id = scanner.nextInt();
+				pst = con.prepareStatement(
+						"select s.student_rollNo,s.student_name,m.evs from marks m join student s on m.student_rollNo=s.student_rollNo join teacher t on t.classes_roomNo=s.classes_roomNo where teacher_id=?");
+				pst.setInt(1, id);
+				ResultSet rs = pst.executeQuery();
+				while (rs.next()) {
+					System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3));
+				}
+				break;
+			}
+			default:
+				throw new InvalidUserChoiceException("User Choice is Invalid");
+			}
+		} catch (SQLException | InvalidUserChoiceException e) {
+			logger.warn(e.getMessage());
 		}
 	}
 

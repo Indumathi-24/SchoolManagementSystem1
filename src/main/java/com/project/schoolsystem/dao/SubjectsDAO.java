@@ -2,8 +2,6 @@ package com.project.schoolsystem.dao;
 
 import java.util.List;
 
-import com.project.schoolsystem.exceptions.InvalidIdException;
-import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
 import com.project.schoolsystem.model.Subjects;
 
 public interface SubjectsDAO {
@@ -13,7 +11,7 @@ public interface SubjectsDAO {
 
 	public Subjects readSubjectsDetailsBySubjectId();
 
-	public void updateSubjectsDetails() throws InvalidIdException, InvalidUserChoiceException;
+	public void updateSubjectsDetails();
 
-	public void deleteSubjectsDetails() throws InvalidIdException;
+	public void deleteSubjectsDetails();
 }

@@ -35,5 +35,4 @@ public class Subjects {
 		this.subjectName = subjectName;
 	}
 
-	
 }

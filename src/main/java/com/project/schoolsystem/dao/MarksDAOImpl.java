@@ -12,20 +12,19 @@ import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
-import com.project.schoolsystem.controller.MarksController;
 import com.project.schoolsystem.exceptions.InvalidRollNoException;
-import com.project.schoolsystem.exceptions.InvalidRoomNoException;
 import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
 import com.project.schoolsystem.model.Marks;
 import com.project.schoolsystem.util.DBUtil;
 
 public class MarksDAOImpl implements MarksDAO {
-	static Logger logger=Logger.getLogger("MarksDAOImpl.class");
-	public void addMarksDetails(Marks marks)  {
+	static Logger logger = Logger.getLogger("MarksDAOImpl.class");
+
+	public void addMarksDetails(Marks marks) {
 		logger.info("In Marks DAO");
 		logger.info("In Add Marks Details Method");
 		try (Connection con = DBUtil.getConnection()) {
-			String query = "insert into Marks values(?,?,?,?,?,?,?)";
+			String query = "insert into Marks(student_rollNo,tamil,english,maths,science,social_science,evs) values(?,?,?,?,?,?,?)";
 			PreparedStatement pst = con.prepareStatement(query);
 			pst.setInt(1, marks.getStudentRollNo());
 			pst.setInt(2, marks.getTamil());
@@ -36,9 +35,9 @@ public class MarksDAOImpl implements MarksDAO {
 			pst.setInt(7, marks.getEvs());
 			pst.executeUpdate();
 			System.out.println("Marks Details Inserted");
-		} catch (Exception  e) {
+		} catch (SQLException e) {
 			logger.info(e.getMessage());
-		} 
+		}
 	}
 
 	public List<Marks> readAllMarksDetails() {
@@ -47,8 +46,8 @@ public class MarksDAOImpl implements MarksDAO {
 		List<Marks> marksList = new ArrayList<Marks>();
 		try (Connection con = DBUtil.getConnection()) {
 			Statement st = con.createStatement();
-			String selectQuery = "select* from Marks";
-			ResultSet resultSet = st.executeQuery(selectQuery);
+			String query = "select* from Marks";
+			ResultSet resultSet = st.executeQuery(query);
 			while (resultSet.next()) {
 				Marks marks = new Marks();
 				marks.setStudentRollNo(resultSet.getInt(1));
@@ -73,10 +72,13 @@ public class MarksDAOImpl implements MarksDAO {
 		logger.info("In Read Marks Details Method");
 		System.out.print("Enter the roll No of the Student whose Marks has to be retrieved:");
 		Scanner sc = new Scanner(System.in);
-		int rollNo = sc.nextInt();
 		Marks marks = new Marks();
 		try (Connection con = DBUtil.getConnection()) {
-			PreparedStatement st = con.prepareStatement("select* from Marks where studentRollNo=?");
+			int rollNo = sc.nextInt();
+			if (rollNo < 1) {
+				throw new InvalidRollNoException("Roll No is Invalid");
+			}
+			PreparedStatement st = con.prepareStatement("select* from Marks where student_rollNo=?");
 			st.setInt(1, rollNo);
 			ResultSet resultSet = st.executeQuery();
 			while (resultSet.next()) {
@@ -88,17 +90,17 @@ public class MarksDAOImpl implements MarksDAO {
 				marks.setSocialScience(resultSet.getInt(6));
 				marks.setEvs(resultSet.getInt(7));
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} catch (SQLException | InvalidRollNoException e) {
+			logger.warn(e.getMessage());
 		}
 		System.out.println("Marks Details of the student Retrieved");
 		return marks;
 
 	}
 
-	public void updateMarksDetails() throws InvalidRollNoException, InvalidUserChoiceException {
-		 logger.info("In Marks DAO");
-		 logger.info("In Update Marks Details Method");
+	public void updateMarksDetails() {
+		logger.info("In Marks DAO");
+		logger.info("In Update Marks Details Method");
 		try (Connection con = DBUtil.getConnection()) {
 			PreparedStatement pst = null;
 			Scanner scanner = new Scanner(System.in);
@@ -120,7 +122,7 @@ public class MarksDAOImpl implements MarksDAO {
 				System.out.print("Enter the Tamil Marks to be updated:");
 				scanner.nextLine();
 				String tamil = scanner.nextLine();
-				pst = con.prepareStatement("update Marks set tamil=? where studentRollNo=?");
+				pst = con.prepareStatement("update Marks set tamil=? where student_rollNo=?");
 				pst.setString(1, tamil);
 				pst.setInt(2, rollNo);
 				pst.executeUpdate();
@@ -132,7 +134,7 @@ public class MarksDAOImpl implements MarksDAO {
 				System.out.print("Enter the English Marks to be updated:");
 				scanner.nextLine();
 				String english = scanner.nextLine();
-				pst = con.prepareStatement("update Marks set english=? where studentRollNo=?");
+				pst = con.prepareStatement("update Marks set english=? where student_rollNo=?");
 				pst.setString(1, english);
 				pst.setInt(2, rollNo);
 				pst.executeUpdate();
@@ -143,7 +145,7 @@ public class MarksDAOImpl implements MarksDAO {
 				System.out.println("Enter the Maths Marks to be updated:");
 				scanner.nextLine();
 				String maths = scanner.nextLine();
-				pst = con.prepareStatement("update Marks set maths=? where studentRollNo=?");
+				pst = con.prepareStatement("update Marks set maths=? where student_rollNo=?");
 				pst.setString(1, maths);
 				pst.setInt(2, rollNo);
 				pst.executeUpdate();
@@ -154,7 +156,7 @@ public class MarksDAOImpl implements MarksDAO {
 				System.out.print("Enter the Science Marks to be updated:");
 				scanner.nextLine();
 				String science = scanner.nextLine();
-				pst = con.prepareStatement("update Marks set science=? where studentRollNo=?");
+				pst = con.prepareStatement("update Marks set science=? where student_rollNo=?");
 				pst.setString(1, science);
 				pst.setInt(2, rollNo);
 				pst.executeUpdate();
@@ -165,7 +167,7 @@ public class MarksDAOImpl implements MarksDAO {
 				System.out.print("Enter the Social Science Marks to be updated:");
 				scanner.nextLine();
 				String socialScience = scanner.nextLine();
-				pst = con.prepareStatement("update Marks set socialScience=? where studentRollNo=?");
+				pst = con.prepareStatement("update Marks set social_science=? where student_rollNo=?");
 				pst.setString(1, socialScience);
 				pst.setInt(2, rollNo);
 				pst.executeUpdate();
@@ -175,29 +177,28 @@ public class MarksDAOImpl implements MarksDAO {
 			case 6: {
 				System.out.print("Enter the EVS Marks to be updated:");
 				scanner.nextLine();
-				String evs= scanner.nextLine();
-				pst = con.prepareStatement("update Marks set evs=? where studentRollNo=?");
+				String evs = scanner.nextLine();
+				pst = con.prepareStatement("update Marks set evs=? where student_rollNo=?");
 				pst.setString(1, evs);
 				pst.setInt(2, rollNo);
 				pst.executeUpdate();
 				System.out.println("Rows Updated");
 				break;
 			}
-          
+
 			default:
 				throw new InvalidUserChoiceException("User choice is Invaild");
 
 			}
-		
-		} 
-		catch (Exception e) {
-			e.printStackTrace();
+
+		} catch (SQLException | InvalidRollNoException | InvalidUserChoiceException e) {
+			logger.warn(e.getMessage());
 		}
 	}
 
 	public void deleteMarksDetails() {
 		logger.info("In Marks DAO");
-	    logger.info("In Delete Marks Details Method");
+		logger.info("In Delete Marks Details Method");
 		try (Connection con = DBUtil.getConnection()) {
 			PreparedStatement pst = null;
 			System.out.print("Enter the roll no of the Student to be deleted:");
@@ -206,13 +207,52 @@ public class MarksDAOImpl implements MarksDAO {
 			if (rollNo < 1) {
 				throw new InvalidRollNoException("Roll No is Invalid");
 			}
-			String query = "delete from Marks where studentRollNo=?";
+			String query = "delete from Marks where student_rollNo=?";
 			pst = con.prepareStatement(query);
 			pst.setInt(1, rollNo);
 			pst.execute();
 			System.out.println("Rows Deleted");
-		} catch (SQLException |InvalidRollNoException e) {
-			e.printStackTrace();
+		} catch (SQLException | InvalidRollNoException e) {
+			logger.warn(e.getMessage());
 		}
+	}
+
+	public void totalMarksByStudentRollNo() {
+		try (Connection con = DBUtil.getConnection()) {
+			PreparedStatement pst = null;
+			System.out.print("Enter the roll no of the Student to be deleted:");
+			Scanner scanner = new Scanner(System.in);
+			int rollNo = scanner.nextInt();
+			if (rollNo < 1) {
+				throw new InvalidRollNoException("Roll No is Invalid");
+			}
+			pst = con.prepareStatement("select * from Marks where student_rollNo=?");
+			pst.setInt(1, rollNo);
+			int tamil = 0;
+			int english = 0;
+			int maths = 0;
+			int science = 0;
+			int socialScience = 0;
+			int evs = 0;
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				tamil = rs.getInt(2);
+				english = rs.getInt(3);
+				maths = rs.getInt(4);
+				science = rs.getInt(5);
+				socialScience = rs.getInt(6);
+				evs = rs.getInt(7);
+			}
+			int totalMarks = 0;
+			totalMarks = tamil + english + maths + science + socialScience + evs;
+			pst = con.prepareStatement("update marks set totalMarks=? where student_rollNo=?");
+			pst.setInt(1, totalMarks);
+			pst.setInt(2, rollNo);
+			pst.execute();
+			System.out.println("Total Marks Calculated");
+		} catch (SQLException | InvalidRollNoException e) {
+			logger.warn(e.getMessage());
+		}
+
 	}
 }

@@ -15,10 +15,11 @@ import com.project.schoolsystem.model.Marks;
 public class MarksServiceImpl implements MarksService {
 	MarksDAO marksDAO = new MarksDAOImpl();
 
-	static Logger logger=Logger.getLogger("MarksServiceImpl.class");
+	static Logger logger = Logger.getLogger("MarksServiceImpl.class");
+
 	public void addMarksDetails(Marks marks) {
 		logger.info("In Marks Service");
-	    logger.info("In Add Marks Details Method");
+		logger.info("In Add Marks Details Method");
 		marksDAO.addMarksDetails(marks);
 	}
 
@@ -33,8 +34,8 @@ public class MarksServiceImpl implements MarksService {
 	}
 
 	public Marks readMarksDetailsByStudentRollNo() {
-		 logger.info("In Marks Service");
-		 logger.info("In Read Marks Details Method");
+		logger.info("In Marks Service");
+		logger.info("In Read Marks Details Method");
 		Marks marks = new Marks();
 
 		marks = marksDAO.readMarksDetailsByStudentRollNo();
@@ -43,16 +44,22 @@ public class MarksServiceImpl implements MarksService {
 
 	}
 
-	public void updateMarksDetails() throws InvalidUserChoiceException, InvalidRollNoException {
+	public void updateMarksDetails() {
 		logger.info("In Marks Service");
 		logger.info("In Update Marks Details Method");
 		marksDAO.updateMarksDetails();
 
 	}
 
-	public void deleteMarksDetails() throws InvalidRollNoException {
+	public void deleteMarksDetails() {
 		logger.info("In Marks Service");
 		logger.info("In Delete Marks Details Method");
 		marksDAO.deleteMarksDetails();
+	}
+
+	public void totalMarksByStudentRollNo() {
+		logger.info("In Marks Service");
+		logger.info("In total Marks Method");
+		marksDAO.totalMarksByStudentRollNo();
 	}
 }

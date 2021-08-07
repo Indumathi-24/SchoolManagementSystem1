@@ -197,3 +197,660 @@
 2021-08-06 22:57:35 INFO  class:100 - In  Student DAO
 2021-08-06 22:57:35 INFO  class:101 - In Update Student Details Method
 2021-08-06 22:57:42 WARN  class:171 - User choice is Invaild
+2021-08-07 15:06:41 INFO  class:69 - In Student Application
+2021-08-07 15:07:43 INFO  class:69 - In Student Application
+2021-08-07 15:07:53 WARN  class:136 - User Choice is Invalid
+2021-08-07 15:10:04 INFO  class:17 - In Student Controller
+2021-08-07 15:10:04 INFO  class:18 - In Add Student Details Method
+2021-08-07 15:10:04 INFO  class:18 - In  Student Service
+2021-08-07 15:10:04 INFO  class:19 - In Add Student Details Method
+2021-08-07 15:10:04 INFO  class:23 - In Student DAO
+2021-08-07 15:10:04 INFO  class:24 - In Add Student Details Method
+2021-08-07 15:11:00 INFO  class:17 - In Student Controller
+2021-08-07 15:11:00 INFO  class:18 - In Add Student Details Method
+2021-08-07 15:11:00 INFO  class:18 - In  Student Service
+2021-08-07 15:11:00 INFO  class:19 - In Add Student Details Method
+2021-08-07 15:11:00 INFO  class:23 - In Student DAO
+2021-08-07 15:11:00 INFO  class:24 - In Add Student Details Method
+2021-08-07 15:11:07 INFO  class:24 - In  Student Controller
+2021-08-07 15:11:07 INFO  class:25 - In Read All Student Details Method
+2021-08-07 15:11:07 INFO  class:24 - In Read All Student Details Method
+2021-08-07 15:11:07 INFO  class:44 - In  Student DAO
+2021-08-07 15:11:07 INFO  class:45 - In Read All Student Details Method
+2021-08-07 15:13:38 INFO  class:47 - In  Student Controller
+2021-08-07 15:13:38 INFO  class:48 - In Update Student Details Method
+2021-08-07 15:13:38 INFO  class:45 - In  Student Service
+2021-08-07 15:13:38 INFO  class:46 - In Update Student Details Method
+2021-08-07 15:13:38 INFO  class:100 - In  Student DAO
+2021-08-07 15:13:38 INFO  class:101 - In Update Student Details Method
+2021-08-07 15:13:58 WARN  class:171 - User choice is Invaild
+2021-08-07 15:14:02 INFO  class:47 - In  Student Controller
+2021-08-07 15:14:02 INFO  class:48 - In Update Student Details Method
+2021-08-07 15:14:02 INFO  class:45 - In  Student Service
+2021-08-07 15:14:02 INFO  class:46 - In Update Student Details Method
+2021-08-07 15:14:02 INFO  class:100 - In  Student DAO
+2021-08-07 15:14:02 INFO  class:101 - In Update Student Details Method
+2021-08-07 15:14:04 WARN  class:171 - Roll No is Invalid
+2021-08-07 15:14:08 INFO  class:53 - In Student Controller
+2021-08-07 15:14:08 INFO  class:54 - In Delete Student Details Method
+2021-08-07 15:14:08 INFO  class:52 - In Student Service
+2021-08-07 15:14:08 INFO  class:53 - In Delete Student Details Method
+2021-08-07 15:14:08 INFO  class:176 - In  Student DAO
+2021-08-07 15:14:08 INFO  class:177 - In Delete Student Details Method
+2021-08-07 15:14:12 WARN  class:192 - Roll No is Invalid
+2021-08-07 15:14:19 INFO  class:53 - In Student Controller
+2021-08-07 15:14:19 INFO  class:54 - In Delete Student Details Method
+2021-08-07 15:14:19 INFO  class:52 - In Student Service
+2021-08-07 15:14:19 INFO  class:53 - In Delete Student Details Method
+2021-08-07 15:14:19 INFO  class:176 - In  Student DAO
+2021-08-07 15:14:19 INFO  class:177 - In Delete Student Details Method
+2021-08-07 15:15:35 INFO  class:17 - In Student Controller
+2021-08-07 15:15:35 INFO  class:18 - In Add Student Details Method
+2021-08-07 15:15:35 INFO  class:18 - In  Student Service
+2021-08-07 15:15:35 INFO  class:19 - In Add Student Details Method
+2021-08-07 15:15:35 INFO  class:23 - In Student DAO
+2021-08-07 15:15:35 INFO  class:24 - In Add Student Details Method
+2021-08-07 15:15:40 INFO  class:37 - In  Student Controller
+2021-08-07 15:15:40 INFO  class:38 - In Read Student Details Method
+2021-08-07 15:15:40 INFO  class:34 - In  Student Service
+2021-08-07 15:15:40 INFO  class:35 - In Read Student Details Method
+2021-08-07 15:15:40 INFO  class:71 - In  Student DAO
+2021-08-07 15:15:40 INFO  class:72 - In Read Student Details Method
+2021-08-07 15:15:51 INFO  class:24 - In  Student Controller
+2021-08-07 15:15:51 INFO  class:25 - In Read All Student Details Method
+2021-08-07 15:15:51 INFO  class:24 - In Read All Student Details Method
+2021-08-07 15:15:51 INFO  class:44 - In  Student DAO
+2021-08-07 15:15:51 INFO  class:45 - In Read All Student Details Method
+2021-08-07 15:59:47 INFO  class:71 - In Teacher Application
+2021-08-07 16:01:02 INFO  class:16 - In School Management Teacher Controller
+2021-08-07 16:01:02 INFO  class:17 - In Add Teacher Details Method
+2021-08-07 16:01:02 INFO  class:18 - In School Management Teacher Service
+2021-08-07 16:01:02 INFO  class:19 - In Add Student Details Method
+2021-08-07 16:01:02 INFO  class:24 - In School Management Teacher DAO
+2021-08-07 16:01:02 INFO  class:25 - In Add Teacher Details Method
+2021-08-07 16:01:33 WARN  class:59 - Id is Invalid
+2021-08-07 16:01:40 INFO  class:22 - In School Management Teacher Controller
+2021-08-07 16:01:40 INFO  class:23 - In Read All Teacher Details Method
+2021-08-07 16:01:40 INFO  class:24 - In School Management Teacher Service
+2021-08-07 16:01:40 INFO  class:25 - In Read All Teacher Details Method
+2021-08-07 16:01:40 INFO  class:45 - In School Management Teacher DAO
+2021-08-07 16:01:40 INFO  class:46 - In Read All Teacher Details Method
+2021-08-07 16:03:51 INFO  class:32 - In School Management Teacher Controller
+2021-08-07 16:03:51 INFO  class:33 - In Read Teacher Details Method
+2021-08-07 16:03:51 INFO  class:35 - In School Management Teacher Service
+2021-08-07 16:03:51 INFO  class:36 - In Read Teacher Details Method
+2021-08-07 16:03:51 INFO  class:73 - In School Management Teacher DAO
+2021-08-07 16:03:51 INFO  class:74 - In Read Teacher Details Method
+2021-08-07 16:04:02 INFO  class:42 - In School Management Teacher Controller
+2021-08-07 16:04:02 INFO  class:43 - In Update Teacher Details Method
+2021-08-07 16:04:02 INFO  class:46 - In School Management Teacher Service
+2021-08-07 16:04:02 INFO  class:47 - In Update Teacher Details Method
+2021-08-07 16:04:02 INFO  class:103 - In School Management Teacher DAO
+2021-08-07 16:04:02 INFO  class:104 - In Update Teacher Details Method
+2021-08-07 16:04:05 WARN  class:185 - Id is Invalid
+2021-08-07 16:04:09 INFO  class:42 - In School Management Teacher Controller
+2021-08-07 16:04:09 INFO  class:43 - In Update Teacher Details Method
+2021-08-07 16:04:09 INFO  class:46 - In School Management Teacher Service
+2021-08-07 16:04:09 INFO  class:47 - In Update Teacher Details Method
+2021-08-07 16:04:09 INFO  class:103 - In School Management Teacher DAO
+2021-08-07 16:04:09 INFO  class:104 - In Update Teacher Details Method
+2021-08-07 16:04:20 WARN  class:185 - User choice is Invaild
+2021-08-07 16:04:27 INFO  class:48 - In School Management Teacher Controller
+2021-08-07 16:04:27 INFO  class:49 - In Delete Teacher Details Method
+2021-08-07 16:04:27 INFO  class:53 - In School Management Teacher Service
+2021-08-07 16:04:27 INFO  class:54 - In Delete Teacher Details Method
+2021-08-07 16:04:27 INFO  class:190 - In School Management Teacher DAO
+2021-08-07 16:04:27 INFO  class:191 - In Delete Teacher Details Method
+2021-08-07 16:04:30 WARN  class:206 - Id is Invalid
+2021-08-07 16:04:57 INFO  class:71 - In Teacher Application
+2021-08-07 16:06:06 INFO  class:16 - In School Management Teacher Controller
+2021-08-07 16:06:06 INFO  class:17 - In Add Teacher Details Method
+2021-08-07 16:06:06 INFO  class:18 - In School Management Teacher Service
+2021-08-07 16:06:06 INFO  class:19 - In Add Student Details Method
+2021-08-07 16:06:06 INFO  class:24 - In School Management Teacher DAO
+2021-08-07 16:06:06 INFO  class:25 - In Add Teacher Details Method
+2021-08-07 16:07:05 INFO  class:16 - In School Management Teacher Controller
+2021-08-07 16:07:05 INFO  class:17 - In Add Teacher Details Method
+2021-08-07 16:07:05 INFO  class:18 - In School Management Teacher Service
+2021-08-07 16:07:05 INFO  class:19 - In Add Student Details Method
+2021-08-07 16:07:05 INFO  class:24 - In School Management Teacher DAO
+2021-08-07 16:07:05 INFO  class:25 - In Add Teacher Details Method
+2021-08-07 16:08:25 INFO  class:16 - In School Management Teacher Controller
+2021-08-07 16:08:25 INFO  class:17 - In Add Teacher Details Method
+2021-08-07 16:08:25 INFO  class:18 - In School Management Teacher Service
+2021-08-07 16:08:25 INFO  class:19 - In Add Student Details Method
+2021-08-07 16:08:25 INFO  class:24 - In School Management Teacher DAO
+2021-08-07 16:08:25 INFO  class:25 - In Add Teacher Details Method
+2021-08-07 16:09:40 INFO  class:16 - In School Management Teacher Controller
+2021-08-07 16:09:40 INFO  class:17 - In Add Teacher Details Method
+2021-08-07 16:09:40 INFO  class:18 - In School Management Teacher Service
+2021-08-07 16:09:40 INFO  class:19 - In Add Student Details Method
+2021-08-07 16:09:40 INFO  class:24 - In School Management Teacher DAO
+2021-08-07 16:09:40 INFO  class:25 - In Add Teacher Details Method
+2021-08-07 16:11:09 INFO  class:16 - In School Management Teacher Controller
+2021-08-07 16:11:09 INFO  class:17 - In Add Teacher Details Method
+2021-08-07 16:11:09 INFO  class:18 - In School Management Teacher Service
+2021-08-07 16:11:09 INFO  class:19 - In Add Student Details Method
+2021-08-07 16:11:09 INFO  class:24 - In School Management Teacher DAO
+2021-08-07 16:11:09 INFO  class:25 - In Add Teacher Details Method
+2021-08-07 16:11:15 INFO  class:22 - In School Management Teacher Controller
+2021-08-07 16:11:15 INFO  class:23 - In Read All Teacher Details Method
+2021-08-07 16:11:15 INFO  class:24 - In School Management Teacher Service
+2021-08-07 16:11:15 INFO  class:25 - In Read All Teacher Details Method
+2021-08-07 16:11:15 INFO  class:45 - In School Management Teacher DAO
+2021-08-07 16:11:15 INFO  class:46 - In Read All Teacher Details Method
+2021-08-07 16:11:52 INFO  class:42 - In School Management Teacher Controller
+2021-08-07 16:11:52 INFO  class:43 - In Update Teacher Details Method
+2021-08-07 16:11:52 INFO  class:46 - In School Management Teacher Service
+2021-08-07 16:11:52 INFO  class:47 - In Update Teacher Details Method
+2021-08-07 16:11:52 INFO  class:103 - In School Management Teacher DAO
+2021-08-07 16:11:52 INFO  class:104 - In Update Teacher Details Method
+2021-08-07 16:12:17 INFO  class:42 - In School Management Teacher Controller
+2021-08-07 16:12:17 INFO  class:43 - In Update Teacher Details Method
+2021-08-07 16:12:17 INFO  class:46 - In School Management Teacher Service
+2021-08-07 16:12:17 INFO  class:47 - In Update Teacher Details Method
+2021-08-07 16:12:17 INFO  class:103 - In School Management Teacher DAO
+2021-08-07 16:12:17 INFO  class:104 - In Update Teacher Details Method
+2021-08-07 16:13:24 INFO  class:71 - In Teacher Application
+2021-08-07 16:13:30 INFO  class:22 - In School Management Teacher Controller
+2021-08-07 16:13:30 INFO  class:23 - In Read All Teacher Details Method
+2021-08-07 16:13:30 INFO  class:24 - In School Management Teacher Service
+2021-08-07 16:13:30 INFO  class:25 - In Read All Teacher Details Method
+2021-08-07 16:13:30 INFO  class:45 - In School Management Teacher DAO
+2021-08-07 16:13:30 INFO  class:46 - In Read All Teacher Details Method
+2021-08-07 16:13:48 INFO  class:42 - In School Management Teacher Controller
+2021-08-07 16:13:48 INFO  class:43 - In Update Teacher Details Method
+2021-08-07 16:13:48 INFO  class:46 - In School Management Teacher Service
+2021-08-07 16:13:48 INFO  class:47 - In Update Teacher Details Method
+2021-08-07 16:13:48 INFO  class:103 - In School Management Teacher DAO
+2021-08-07 16:13:48 INFO  class:104 - In Update Teacher Details Method
+2021-08-07 16:14:47 WARN  class:59 - Id is Invalid
+2021-08-07 16:14:52 INFO  class:48 - In School Management Teacher Controller
+2021-08-07 16:14:52 INFO  class:49 - In Delete Teacher Details Method
+2021-08-07 16:14:52 INFO  class:53 - In School Management Teacher Service
+2021-08-07 16:14:52 INFO  class:54 - In Delete Teacher Details Method
+2021-08-07 16:14:52 INFO  class:190 - In School Management Teacher DAO
+2021-08-07 16:14:52 INFO  class:191 - In Delete Teacher Details Method
+2021-08-07 16:14:54 WARN  class:206 - Id is Invalid
+2021-08-07 16:14:57 INFO  class:42 - In School Management Teacher Controller
+2021-08-07 16:14:57 INFO  class:43 - In Update Teacher Details Method
+2021-08-07 16:14:57 INFO  class:46 - In School Management Teacher Service
+2021-08-07 16:14:57 INFO  class:47 - In Update Teacher Details Method
+2021-08-07 16:14:57 INFO  class:103 - In School Management Teacher DAO
+2021-08-07 16:14:57 INFO  class:104 - In Update Teacher Details Method
+2021-08-07 16:14:59 WARN  class:185 - Id is Invalid
+2021-08-07 16:15:01 INFO  class:42 - In School Management Teacher Controller
+2021-08-07 16:15:01 INFO  class:43 - In Update Teacher Details Method
+2021-08-07 16:15:01 INFO  class:46 - In School Management Teacher Service
+2021-08-07 16:15:01 INFO  class:47 - In Update Teacher Details Method
+2021-08-07 16:15:01 INFO  class:103 - In School Management Teacher DAO
+2021-08-07 16:15:01 INFO  class:104 - In Update Teacher Details Method
+2021-08-07 16:15:12 WARN  class:185 - User choice is Invaild
+2021-08-07 16:26:22 INFO  class:45 - In School Application
+2021-08-07 16:26:43 WARN  class:36 - School Id is Invalid
+2021-08-07 16:26:48 INFO  class:20 - In School Controller
+2021-08-07 16:26:48 INFO  class:21 - In Read School Details Method
+2021-08-07 16:26:48 INFO  class:21 - In Read All School Details Method
+2021-08-07 16:26:48 INFO  class:38 - In School DAO
+2021-08-07 16:26:48 INFO  class:39 - In Read All School Details Method
+2021-08-07 16:27:01 WARN  class:79 - User Choice is Invalid
+2021-08-07 16:51:52 INFO  class:56 - In Classes Application
+2021-08-07 16:52:49 INFO  class:17 - In Classes Controller
+2021-08-07 16:52:49 INFO  class:18 - In Add Classes Details Method
+2021-08-07 16:52:49 INFO  class:18 - In Classes Service
+2021-08-07 16:52:49 INFO  class:19 - In Add Classes Details Method
+2021-08-07 16:52:49 INFO  class:22 - In classes DAO
+2021-08-07 16:52:49 INFO  class:23 - In Add classes Details Method
+2021-08-07 16:53:02 INFO  class:17 - In Classes Controller
+2021-08-07 16:53:02 INFO  class:18 - In Add Classes Details Method
+2021-08-07 16:53:02 INFO  class:18 - In Classes Service
+2021-08-07 16:53:02 INFO  class:19 - In Add Classes Details Method
+2021-08-07 16:53:02 INFO  class:22 - In classes DAO
+2021-08-07 16:53:02 INFO  class:23 - In Add classes Details Method
+2021-08-07 16:53:08 INFO  class:23 - In Classes Controller
+2021-08-07 16:53:08 INFO  class:24 - In Read All Classes Details Method
+2021-08-07 16:53:08 INFO  class:24 - In Read All Classes Details Method
+2021-08-07 16:53:08 INFO  class:38 - In classes DAO
+2021-08-07 16:53:08 INFO  class:39 - In Read All classes Details Method
+2021-08-07 16:53:24 INFO  class:36 - In Classes Controller
+2021-08-07 16:53:24 INFO  class:37 - In Read Classes Details Method
+2021-08-07 16:53:24 INFO  class:34 - In Classes Service
+2021-08-07 16:53:24 INFO  class:35 - In Read Classes Details Method
+2021-08-07 16:53:24 INFO  class:61 - In classes DAO
+2021-08-07 16:53:24 INFO  class:62 - In Read classes Details Method
+2021-08-07 16:53:53 WARN  class:43 - Room No is Invalid
+2021-08-07 16:54:17 INFO  class:17 - In Classes Controller
+2021-08-07 16:54:17 INFO  class:18 - In Add Classes Details Method
+2021-08-07 16:54:17 INFO  class:18 - In Classes Service
+2021-08-07 16:54:17 INFO  class:19 - In Add Classes Details Method
+2021-08-07 16:54:17 INFO  class:22 - In classes DAO
+2021-08-07 16:54:17 INFO  class:23 - In Add classes Details Method
+2021-08-07 16:54:29 INFO  class:17 - In Classes Controller
+2021-08-07 16:54:29 INFO  class:18 - In Add Classes Details Method
+2021-08-07 16:54:29 INFO  class:18 - In Classes Service
+2021-08-07 16:54:29 INFO  class:19 - In Add Classes Details Method
+2021-08-07 16:54:29 INFO  class:22 - In classes DAO
+2021-08-07 16:54:29 INFO  class:23 - In Add classes Details Method
+2021-08-07 16:55:01 INFO  class:17 - In Classes Controller
+2021-08-07 16:55:01 INFO  class:18 - In Add Classes Details Method
+2021-08-07 16:55:01 INFO  class:18 - In Classes Service
+2021-08-07 16:55:01 INFO  class:19 - In Add Classes Details Method
+2021-08-07 16:55:01 INFO  class:22 - In classes DAO
+2021-08-07 16:55:01 INFO  class:23 - In Add classes Details Method
+2021-08-07 16:55:11 INFO  class:17 - In Classes Controller
+2021-08-07 16:55:11 INFO  class:18 - In Add Classes Details Method
+2021-08-07 16:55:11 INFO  class:18 - In Classes Service
+2021-08-07 16:55:11 INFO  class:19 - In Add Classes Details Method
+2021-08-07 16:55:11 INFO  class:22 - In classes DAO
+2021-08-07 16:55:11 INFO  class:23 - In Add classes Details Method
+2021-08-07 16:55:36 INFO  class:17 - In Classes Controller
+2021-08-07 16:55:36 INFO  class:18 - In Add Classes Details Method
+2021-08-07 16:55:36 INFO  class:18 - In Classes Service
+2021-08-07 16:55:36 INFO  class:19 - In Add Classes Details Method
+2021-08-07 16:55:36 INFO  class:22 - In classes DAO
+2021-08-07 16:55:36 INFO  class:23 - In Add classes Details Method
+2021-08-07 16:57:07 INFO  class:23 - In Classes Controller
+2021-08-07 16:57:07 INFO  class:24 - In Read All Classes Details Method
+2021-08-07 16:57:07 INFO  class:24 - In Read All Classes Details Method
+2021-08-07 16:57:07 INFO  class:38 - In classes DAO
+2021-08-07 16:57:07 INFO  class:39 - In Read All classes Details Method
+2021-08-07 16:57:35 INFO  class:46 - In Classes Controller
+2021-08-07 16:57:35 INFO  class:47 - In Update Classes Details Method
+2021-08-07 16:57:35 INFO  class:45 - In Classes Service
+2021-08-07 16:57:35 INFO  class:46 - In Update Classes Details Method
+2021-08-07 16:57:35 INFO  class:85 - In classes DAO
+2021-08-07 16:57:35 INFO  class:86 - In Update classes Details Method
+2021-08-07 16:57:45 WARN  class:129 - User choice is Invaild
+2021-08-07 16:57:49 INFO  class:46 - In Classes Controller
+2021-08-07 16:57:49 INFO  class:47 - In Update Classes Details Method
+2021-08-07 16:57:49 INFO  class:45 - In Classes Service
+2021-08-07 16:57:49 INFO  class:46 - In Update Classes Details Method
+2021-08-07 16:57:49 INFO  class:85 - In classes DAO
+2021-08-07 16:57:49 INFO  class:86 - In Update classes Details Method
+2021-08-07 16:57:52 WARN  class:129 - Room No is Invalid
+2021-08-07 16:58:25 INFO  class:52 - In Classes Controller
+2021-08-07 16:58:25 INFO  class:53 - In Delete Classes Details Method
+2021-08-07 16:58:25 INFO  class:52 - In Classes Service
+2021-08-07 16:58:25 INFO  class:53 - In Delete Classes Details Method
+2021-08-07 16:58:25 INFO  class:134 - In classes DAO
+2021-08-07 16:58:25 INFO  class:135 - In Delete classes Details Method
+2021-08-07 16:58:30 WARN  class:150 - Room No is Invalid
+2021-08-07 19:12:32 INFO  class:69 - In Marks Application
+2021-08-07 19:13:35 INFO  class:17 - In Marks Controller
+2021-08-07 19:13:35 INFO  class:18 - In Add Marks Details Method
+2021-08-07 19:13:35 INFO  class:20 - In Marks Service
+2021-08-07 19:13:35 INFO  class:21 - In Add Marks Details Method
+2021-08-07 19:13:35 INFO  class:24 - In Marks DAO
+2021-08-07 19:13:35 INFO  class:25 - In Add Marks Details Method
+2021-08-07 19:13:36 INFO  class:39 - Column count doesn't match value count at row 1
+2021-08-07 19:13:55 INFO  class:17 - In Marks Controller
+2021-08-07 19:13:55 INFO  class:18 - In Add Marks Details Method
+2021-08-07 19:13:55 INFO  class:20 - In Marks Service
+2021-08-07 19:13:55 INFO  class:21 - In Add Marks Details Method
+2021-08-07 19:13:55 INFO  class:24 - In Marks DAO
+2021-08-07 19:13:55 INFO  class:25 - In Add Marks Details Method
+2021-08-07 19:13:55 INFO  class:39 - Column count doesn't match value count at row 1
+2021-08-07 19:14:21 WARN  class:56 - Roll No is Invalid
+2021-08-07 19:14:26 INFO  class:24 - In Marks Controller
+2021-08-07 19:14:26 INFO  class:25 - In Read All Marks Details Method
+2021-08-07 19:14:26 INFO  class:26 - In Read All Marks Details Method
+2021-08-07 19:14:26 INFO  class:44 - In Marks DAO
+2021-08-07 19:14:26 INFO  class:45 - In Read All Marks Details Method
+2021-08-07 19:14:34 INFO  class:33 - In Marks Controller
+2021-08-07 19:14:34 INFO  class:34 - In Read Marks Details Method
+2021-08-07 19:14:34 INFO  class:36 - In Marks Service
+2021-08-07 19:14:34 INFO  class:37 - In Read Marks Details Method
+2021-08-07 19:14:34 INFO  class:71 - In Marks DAO
+2021-08-07 19:14:34 INFO  class:72 - In Read Marks Details Method
+2021-08-07 19:17:02 INFO  class:17 - In Marks Controller
+2021-08-07 19:17:02 INFO  class:18 - In Add Marks Details Method
+2021-08-07 19:17:02 INFO  class:20 - In Marks Service
+2021-08-07 19:17:02 INFO  class:21 - In Add Marks Details Method
+2021-08-07 19:17:02 INFO  class:24 - In Marks DAO
+2021-08-07 19:17:02 INFO  class:25 - In Add Marks Details Method
+2021-08-07 19:17:24 INFO  class:17 - In Marks Controller
+2021-08-07 19:17:24 INFO  class:18 - In Add Marks Details Method
+2021-08-07 19:17:24 INFO  class:20 - In Marks Service
+2021-08-07 19:17:24 INFO  class:21 - In Add Marks Details Method
+2021-08-07 19:17:24 INFO  class:24 - In Marks DAO
+2021-08-07 19:17:24 INFO  class:25 - In Add Marks Details Method
+2021-08-07 19:17:29 INFO  class:24 - In Marks Controller
+2021-08-07 19:17:29 INFO  class:25 - In Read All Marks Details Method
+2021-08-07 19:17:29 INFO  class:26 - In Read All Marks Details Method
+2021-08-07 19:17:29 INFO  class:44 - In Marks DAO
+2021-08-07 19:17:29 INFO  class:45 - In Read All Marks Details Method
+2021-08-07 19:17:35 INFO  class:33 - In Marks Controller
+2021-08-07 19:17:35 INFO  class:34 - In Read Marks Details Method
+2021-08-07 19:17:35 INFO  class:36 - In Marks Service
+2021-08-07 19:17:35 INFO  class:37 - In Read Marks Details Method
+2021-08-07 19:17:35 INFO  class:71 - In Marks DAO
+2021-08-07 19:17:35 INFO  class:72 - In Read Marks Details Method
+2021-08-07 19:17:41 INFO  class:43 - In Marks Controller
+2021-08-07 19:17:41 INFO  class:44 - In Update Marks Details Method
+2021-08-07 19:17:41 INFO  class:47 - In Marks Service
+2021-08-07 19:17:41 INFO  class:48 - In Update Marks Details Method
+2021-08-07 19:17:41 INFO  class:102 - In Marks DAO
+2021-08-07 19:17:41 INFO  class:103 - In Update Marks Details Method
+2021-08-07 19:18:41 WARN  class:56 - Roll No is Invalid
+2021-08-07 19:18:46 INFO  class:33 - In Marks Controller
+2021-08-07 19:18:46 INFO  class:34 - In Read Marks Details Method
+2021-08-07 19:18:46 INFO  class:36 - In Marks Service
+2021-08-07 19:18:46 INFO  class:37 - In Read Marks Details Method
+2021-08-07 19:18:46 INFO  class:71 - In Marks DAO
+2021-08-07 19:18:46 INFO  class:72 - In Read Marks Details Method
+2021-08-07 19:18:51 WARN  class:94 - Roll No is Invalid
+2021-08-07 19:19:09 INFO  class:43 - In Marks Controller
+2021-08-07 19:19:09 INFO  class:44 - In Update Marks Details Method
+2021-08-07 19:19:09 INFO  class:47 - In Marks Service
+2021-08-07 19:19:09 INFO  class:48 - In Update Marks Details Method
+2021-08-07 19:19:09 INFO  class:102 - In Marks DAO
+2021-08-07 19:19:09 INFO  class:103 - In Update Marks Details Method
+2021-08-07 19:19:15 WARN  class:196 - Roll No is Invalid
+2021-08-07 19:19:17 INFO  class:43 - In Marks Controller
+2021-08-07 19:19:17 INFO  class:44 - In Update Marks Details Method
+2021-08-07 19:19:17 INFO  class:47 - In Marks Service
+2021-08-07 19:19:17 INFO  class:48 - In Update Marks Details Method
+2021-08-07 19:19:17 INFO  class:102 - In Marks DAO
+2021-08-07 19:19:17 INFO  class:103 - In Update Marks Details Method
+2021-08-07 19:19:27 WARN  class:196 - User choice is Invaild
+2021-08-07 19:19:30 INFO  class:49 - In Marks Controller
+2021-08-07 19:19:30 INFO  class:50 - In Delete Marks Details Method
+2021-08-07 19:19:30 INFO  class:54 - In Marks Service
+2021-08-07 19:19:30 INFO  class:55 - In Delete Marks Details Method
+2021-08-07 19:19:30 INFO  class:201 - In Marks DAO
+2021-08-07 19:19:30 INFO  class:202 - In Delete Marks Details Method
+2021-08-07 19:19:37 WARN  class:217 - Roll No is Invalid
+2021-08-07 19:43:19 INFO  class:69 - In Marks Application
+2021-08-07 19:44:00 INFO  class:17 - In Marks Controller
+2021-08-07 19:44:00 INFO  class:18 - In Add Marks Details Method
+2021-08-07 19:44:00 INFO  class:20 - In Marks Service
+2021-08-07 19:44:00 INFO  class:21 - In Add Marks Details Method
+2021-08-07 19:44:00 INFO  class:24 - In Marks DAO
+2021-08-07 19:44:00 INFO  class:25 - In Add Marks Details Method
+2021-08-07 19:44:01 INFO  class:39 - Unknown column 'socialScience' in 'field list'
+2021-08-07 19:44:56 INFO  class:69 - In Marks Application
+2021-08-07 19:49:26 INFO  class:69 - In Marks Application
+2021-08-07 19:50:20 INFO  class:69 - In Marks Application
+2021-08-07 19:50:32 INFO  class:55 - In Marks Service
+2021-08-07 19:50:32 INFO  class:56 - In total Marks Method
+2021-08-07 19:50:32 INFO  class:60 - In Marks Service
+2021-08-07 19:50:32 INFO  class:61 - In total Marks Method
+2021-08-07 19:50:38 WARN  class:247 - Before start of result set
+2021-08-07 19:55:25 INFO  class:69 - In Marks Application
+2021-08-07 19:55:38 INFO  class:55 - In Marks Service
+2021-08-07 19:55:38 INFO  class:56 - In total Marks Method
+2021-08-07 19:55:38 INFO  class:60 - In Marks Service
+2021-08-07 19:55:38 INFO  class:61 - In total Marks Method
+2021-08-07 19:57:35 INFO  class:55 - In Marks Service
+2021-08-07 19:57:35 INFO  class:56 - In total Marks Method
+2021-08-07 19:57:35 INFO  class:60 - In Marks Service
+2021-08-07 19:57:35 INFO  class:61 - In total Marks Method
+2021-08-07 19:59:29 INFO  class:69 - In Marks Application
+2021-08-07 19:59:46 INFO  class:17 - In Marks Controller
+2021-08-07 19:59:46 INFO  class:18 - In Add Marks Details Method
+2021-08-07 19:59:46 INFO  class:20 - In Marks Service
+2021-08-07 19:59:46 INFO  class:21 - In Add Marks Details Method
+2021-08-07 19:59:46 INFO  class:24 - In Marks DAO
+2021-08-07 19:59:46 INFO  class:25 - In Add Marks Details Method
+2021-08-07 19:59:48 INFO  class:39 - Column count doesn't match value count at row 1
+2021-08-07 20:02:16 INFO  class:69 - In Marks Application
+2021-08-07 20:02:41 INFO  class:17 - In Marks Controller
+2021-08-07 20:02:41 INFO  class:18 - In Add Marks Details Method
+2021-08-07 20:02:41 INFO  class:20 - In Marks Service
+2021-08-07 20:02:41 INFO  class:21 - In Add Marks Details Method
+2021-08-07 20:02:41 INFO  class:24 - In Marks DAO
+2021-08-07 20:02:41 INFO  class:25 - In Add Marks Details Method
+2021-08-07 20:03:18 INFO  class:24 - In Marks Controller
+2021-08-07 20:03:18 INFO  class:25 - In Read All Marks Details Method
+2021-08-07 20:03:18 INFO  class:26 - In Read All Marks Details Method
+2021-08-07 20:03:18 INFO  class:44 - In Marks DAO
+2021-08-07 20:03:18 INFO  class:45 - In Read All Marks Details Method
+2021-08-07 20:03:26 INFO  class:33 - In Marks Controller
+2021-08-07 20:03:26 INFO  class:34 - In Read Marks Details Method
+2021-08-07 20:03:26 INFO  class:36 - In Marks Service
+2021-08-07 20:03:26 INFO  class:37 - In Read Marks Details Method
+2021-08-07 20:03:26 INFO  class:71 - In Marks DAO
+2021-08-07 20:03:26 INFO  class:72 - In Read Marks Details Method
+2021-08-07 20:03:34 INFO  class:43 - In Marks Controller
+2021-08-07 20:03:34 INFO  class:44 - In Update Marks Details Method
+2021-08-07 20:03:34 INFO  class:47 - In Marks Service
+2021-08-07 20:03:34 INFO  class:48 - In Update Marks Details Method
+2021-08-07 20:03:34 INFO  class:102 - In Marks DAO
+2021-08-07 20:03:34 INFO  class:103 - In Update Marks Details Method
+2021-08-07 20:04:02 INFO  class:43 - In Marks Controller
+2021-08-07 20:04:02 INFO  class:44 - In Update Marks Details Method
+2021-08-07 20:04:02 INFO  class:47 - In Marks Service
+2021-08-07 20:04:02 INFO  class:48 - In Update Marks Details Method
+2021-08-07 20:04:02 INFO  class:102 - In Marks DAO
+2021-08-07 20:04:02 INFO  class:103 - In Update Marks Details Method
+2021-08-07 20:04:04 WARN  class:196 - Roll No is Invalid
+2021-08-07 20:04:07 INFO  class:43 - In Marks Controller
+2021-08-07 20:04:07 INFO  class:44 - In Update Marks Details Method
+2021-08-07 20:04:07 INFO  class:47 - In Marks Service
+2021-08-07 20:04:07 INFO  class:48 - In Update Marks Details Method
+2021-08-07 20:04:07 INFO  class:102 - In Marks DAO
+2021-08-07 20:04:07 INFO  class:103 - In Update Marks Details Method
+2021-08-07 20:04:15 WARN  class:196 - User choice is Invaild
+2021-08-07 20:04:20 INFO  class:49 - In Marks Controller
+2021-08-07 20:04:20 INFO  class:50 - In Delete Marks Details Method
+2021-08-07 20:04:20 INFO  class:54 - In Marks Service
+2021-08-07 20:04:20 INFO  class:55 - In Delete Marks Details Method
+2021-08-07 20:04:20 INFO  class:201 - In Marks DAO
+2021-08-07 20:04:20 INFO  class:202 - In Delete Marks Details Method
+2021-08-07 20:04:22 WARN  class:217 - Roll No is Invalid
+2021-08-07 20:04:40 INFO  class:49 - In Marks Controller
+2021-08-07 20:04:40 INFO  class:50 - In Delete Marks Details Method
+2021-08-07 20:04:40 INFO  class:54 - In Marks Service
+2021-08-07 20:04:40 INFO  class:55 - In Delete Marks Details Method
+2021-08-07 20:04:40 INFO  class:201 - In Marks DAO
+2021-08-07 20:04:40 INFO  class:202 - In Delete Marks Details Method
+2021-08-07 20:04:46 INFO  class:55 - In Marks Service
+2021-08-07 20:04:46 INFO  class:56 - In total Marks Method
+2021-08-07 20:04:46 INFO  class:60 - In Marks Service
+2021-08-07 20:04:46 INFO  class:61 - In total Marks Method
+2021-08-07 20:04:48 WARN  class:255 - Roll No is Invalid
+2021-08-07 20:25:39 INFO  class:53 - In Subjects Application
+2021-08-07 20:26:14 INFO  class:17 - In Subjects Controller
+2021-08-07 20:26:14 INFO  class:18 - In Add Subjects Details Method
+2021-08-07 20:26:14 INFO  class:19 - In Subjects Service
+2021-08-07 20:26:14 INFO  class:20 - In Add Subjects Details Method
+2021-08-07 20:26:14 INFO  class:22 - In Subjects DAO
+2021-08-07 20:26:14 INFO  class:23 - In Add Subjects Details Method
+2021-08-07 20:26:24 INFO  class:17 - In Subjects Controller
+2021-08-07 20:26:24 INFO  class:18 - In Add Subjects Details Method
+2021-08-07 20:26:24 INFO  class:19 - In Subjects Service
+2021-08-07 20:26:24 INFO  class:20 - In Add Subjects Details Method
+2021-08-07 20:26:24 INFO  class:22 - In Subjects DAO
+2021-08-07 20:26:24 INFO  class:23 - In Add Subjects Details Method
+2021-08-07 20:26:41 INFO  class:17 - In Subjects Controller
+2021-08-07 20:26:41 INFO  class:18 - In Add Subjects Details Method
+2021-08-07 20:26:41 INFO  class:19 - In Subjects Service
+2021-08-07 20:26:41 INFO  class:20 - In Add Subjects Details Method
+2021-08-07 20:26:41 INFO  class:22 - In Subjects DAO
+2021-08-07 20:26:41 INFO  class:23 - In Add Subjects Details Method
+2021-08-07 20:26:52 INFO  class:17 - In Subjects Controller
+2021-08-07 20:26:52 INFO  class:18 - In Add Subjects Details Method
+2021-08-07 20:26:52 INFO  class:19 - In Subjects Service
+2021-08-07 20:26:52 INFO  class:20 - In Add Subjects Details Method
+2021-08-07 20:26:52 INFO  class:22 - In Subjects DAO
+2021-08-07 20:26:52 INFO  class:23 - In Add Subjects Details Method
+2021-08-07 20:26:57 INFO  class:23 - In Subjects Controller
+2021-08-07 20:26:57 INFO  class:24 - In Read All Subjects Details Method
+2021-08-07 20:26:57 INFO  class:25 - In Read All Subjects Details Method
+2021-08-07 20:26:57 INFO  class:37 - In Subjects DAO
+2021-08-07 20:26:57 INFO  class:38 - In Read All Subjects Details Method
+2021-08-07 20:27:17 INFO  class:36 - In Subjects Controller
+2021-08-07 20:27:17 INFO  class:37 - In Read Subjects Details Method
+2021-08-07 20:27:17 INFO  class:35 - In Subjects Service
+2021-08-07 20:27:17 INFO  class:36 - In Read Subjects Details Method
+2021-08-07 20:27:17 INFO  class:59 - In Subjects DAO
+2021-08-07 20:27:17 INFO  class:60 - In Read Subjects Details Method
+2021-08-07 20:27:26 INFO  class:46 - In Subjects Controller
+2021-08-07 20:27:26 INFO  class:47 - In Update Subjects Details Method
+2021-08-07 20:27:26 INFO  class:46 - In Subjects Service
+2021-08-07 20:27:26 INFO  class:47 - In Update Subjects Details Method
+2021-08-07 20:27:26 INFO  class:85 - In Subjects DAO
+2021-08-07 20:27:26 INFO  class:86 - In Update Subjects Details Method
+2021-08-07 20:27:34 WARN  class:115 - Id is Invalid
+2021-08-07 20:27:37 INFO  class:46 - In Subjects Controller
+2021-08-07 20:27:37 INFO  class:47 - In Update Subjects Details Method
+2021-08-07 20:27:37 INFO  class:46 - In Subjects Service
+2021-08-07 20:27:37 INFO  class:47 - In Update Subjects Details Method
+2021-08-07 20:27:37 INFO  class:85 - In Subjects DAO
+2021-08-07 20:27:37 INFO  class:86 - In Update Subjects Details Method
+2021-08-07 20:27:50 WARN  class:115 - User choice is Invaild
+2021-08-07 20:27:53 INFO  class:52 - In Subjects Controller
+2021-08-07 20:27:53 INFO  class:53 - In Delete Subjects Details Method
+2021-08-07 20:27:53 INFO  class:53 - In Subjects Service
+2021-08-07 20:27:53 INFO  class:54 - In Delete Subjects Details Method
+2021-08-07 20:27:53 INFO  class:120 - In Subjects DAO
+2021-08-07 20:27:53 INFO  class:121 - In Delete Subjects Details Method
+2021-08-07 20:27:56 WARN  class:136 - Id is Invalid
+2021-08-07 20:56:06 INFO  class:55 - In Parents Application
+2021-08-07 20:56:43 INFO  class:22 - In Parents Controller
+2021-08-07 20:56:43 INFO  class:23 - In Read All Parents Details Method
+2021-08-07 20:56:43 INFO  class:23 - In Parents Service
+2021-08-07 20:56:43 INFO  class:24 - In Read All Parents Details Method
+2021-08-07 20:56:43 INFO  class:39 - In Parents DAO
+2021-08-07 20:56:43 INFO  class:40 - In Read All Parents Details Method
+2021-08-07 20:57:24 WARN  class:43 - Roll NO is Invalid
+2021-08-07 20:57:55 INFO  class:16 - In Parents Controller
+2021-08-07 20:57:55 INFO  class:17 - In Add Parents Details Method
+2021-08-07 20:57:55 INFO  class:17 - In Parents Service
+2021-08-07 20:57:55 INFO  class:18 - In Add Parents Details Method
+2021-08-07 20:57:55 INFO  class:23 - In Parents DAO
+2021-08-07 20:57:55 INFO  class:24 - In Add Parents Details Method
+2021-08-07 20:58:04 INFO  class:45 - In Parents Controller
+2021-08-07 20:58:04 INFO  class:46 - In Update Parents Details Method
+2021-08-07 20:58:04 INFO  class:45 - In Parents Service
+2021-08-07 20:58:04 INFO  class:46 - In Update Parents Details Method
+2021-08-07 20:58:04 INFO  class:90 - In Parents DAO
+2021-08-07 20:58:04 INFO  class:91 - In Update Parents Details Method
+2021-08-07 20:58:06 WARN  class:134 - Roll No is Invalid
+2021-08-07 20:58:10 INFO  class:45 - In Parents Controller
+2021-08-07 20:58:10 INFO  class:46 - In Update Parents Details Method
+2021-08-07 20:58:10 INFO  class:45 - In Parents Service
+2021-08-07 20:58:10 INFO  class:46 - In Update Parents Details Method
+2021-08-07 20:58:10 INFO  class:90 - In Parents DAO
+2021-08-07 20:58:10 INFO  class:91 - In Update Parents Details Method
+2021-08-07 20:58:17 WARN  class:134 - User choice is Invaild
+2021-08-07 20:58:23 INFO  class:51 - In Parents Controller
+2021-08-07 20:58:23 INFO  class:52 - In Delete Parents Details Method
+2021-08-07 20:58:23 INFO  class:52 - In Parents Service
+2021-08-07 20:58:23 INFO  class:53 - In Delete Parents Details Method
+2021-08-07 20:58:23 INFO  class:139 - In Parents DAO
+2021-08-07 20:58:23 INFO  class:140 - In Delete Parents Details Method
+2021-08-07 20:58:24 WARN  class:155 - Roll No is Invalid
+2021-08-07 20:58:43 INFO  class:16 - In Parents Controller
+2021-08-07 20:58:43 INFO  class:17 - In Add Parents Details Method
+2021-08-07 20:58:43 INFO  class:17 - In Parents Service
+2021-08-07 20:58:43 INFO  class:18 - In Add Parents Details Method
+2021-08-07 20:58:43 INFO  class:23 - In Parents DAO
+2021-08-07 20:58:43 INFO  class:24 - In Add Parents Details Method
+2021-08-07 20:59:05 INFO  class:16 - In Parents Controller
+2021-08-07 20:59:05 INFO  class:17 - In Add Parents Details Method
+2021-08-07 20:59:05 INFO  class:17 - In Parents Service
+2021-08-07 20:59:05 INFO  class:18 - In Add Parents Details Method
+2021-08-07 20:59:05 INFO  class:23 - In Parents DAO
+2021-08-07 20:59:05 INFO  class:24 - In Add Parents Details Method
+2021-08-07 20:59:10 INFO  class:22 - In Parents Controller
+2021-08-07 20:59:10 INFO  class:23 - In Read All Parents Details Method
+2021-08-07 20:59:10 INFO  class:23 - In Parents Service
+2021-08-07 20:59:10 INFO  class:24 - In Read All Parents Details Method
+2021-08-07 20:59:10 INFO  class:39 - In Parents DAO
+2021-08-07 20:59:10 INFO  class:40 - In Read All Parents Details Method
+2021-08-07 20:59:25 INFO  class:35 - In Parents Controller
+2021-08-07 20:59:25 INFO  class:36 - In Read Parents Details Method
+2021-08-07 20:59:25 INFO  class:34 - In Parents Service
+2021-08-07 20:59:25 INFO  class:35 - In Read Parents Details Method
+2021-08-07 20:59:25 INFO  class:62 - In Parents DAO
+2021-08-07 20:59:25 INFO  class:63 - In Read Parents Details Method
+2021-08-07 20:59:27 INFO  class:82 - Roll No is Invalid
+2021-08-07 20:59:37 INFO  class:35 - In Parents Controller
+2021-08-07 20:59:37 INFO  class:36 - In Read Parents Details Method
+2021-08-07 20:59:37 INFO  class:34 - In Parents Service
+2021-08-07 20:59:37 INFO  class:35 - In Read Parents Details Method
+2021-08-07 20:59:37 INFO  class:62 - In Parents DAO
+2021-08-07 20:59:37 INFO  class:63 - In Read Parents Details Method
+2021-08-07 21:17:35 INFO  class:55 - In Parents Application
+2021-08-07 21:18:08 INFO  class:57 - In Parents Service
+2021-08-07 21:18:08 INFO  class:58 - In StudentParents Details Method
+2021-08-07 21:18:08 INFO  class:58 - In Parents Service
+2021-08-07 21:18:08 INFO  class:59 - In Student Parents Details Method
+2021-08-07 21:18:08 INFO  class:159 - In Parents DAO
+2021-08-07 21:18:08 INFO  class:160 - In Delete Parents Details Method
+2021-08-07 21:50:32 INFO  class:55 - In Parents Application
+2021-08-07 21:50:43 INFO  class:35 - In Parents Controller
+2021-08-07 21:50:43 INFO  class:36 - In Read Parents Details Method
+2021-08-07 21:50:43 INFO  class:34 - In Parents Service
+2021-08-07 21:50:43 INFO  class:35 - In Read Parents Details Method
+2021-08-07 21:50:43 INFO  class:62 - In Parents DAO
+2021-08-07 21:50:43 INFO  class:63 - In Read Parents Details Method
+2021-08-07 21:50:54 INFO  class:22 - In Parents Controller
+2021-08-07 21:50:54 INFO  class:23 - In Read All Parents Details Method
+2021-08-07 21:50:54 INFO  class:23 - In Parents Service
+2021-08-07 21:50:54 INFO  class:24 - In Read All Parents Details Method
+2021-08-07 21:50:54 INFO  class:39 - In Parents DAO
+2021-08-07 21:50:54 INFO  class:40 - In Read All Parents Details Method
+2021-08-07 21:52:51 INFO  class:69 - In Student Application
+2021-08-07 21:52:56 INFO  class:61 - In Student Controller
+2021-08-07 21:52:56 INFO  class:62 - In Student Parents Details Method
+2021-08-07 21:52:56 INFO  class:58 - In Student Service
+2021-08-07 21:52:56 INFO  class:59 - In Student Parents Details Method
+2021-08-07 21:52:56 INFO  class:197 - In Student DAO
+2021-08-07 21:52:56 INFO  class:198 - In Student Parents Details Method
+2021-08-07 22:25:54 INFO  class:71 - In Teacher Application
+2021-08-07 22:26:01 INFO  class:48 - In School Management Teacher Controller
+2021-08-07 22:26:01 INFO  class:49 - In Delete Teacher Details Method
+2021-08-07 22:26:01 INFO  class:53 - In School Management Teacher Service
+2021-08-07 22:26:01 INFO  class:54 - In Delete Teacher Details Method
+2021-08-07 22:26:01 INFO  class:190 - In School Management Teacher DAO
+2021-08-07 22:26:01 INFO  class:191 - In Delete Teacher Details Method
+2021-08-07 22:42:39 INFO  class:71 - In Teacher Application
+2021-08-07 22:43:02 INFO  class:53 - In School Management Teacher Controller
+2021-08-07 22:43:02 INFO  class:54 - In total Subject Marks Details Method
+2021-08-07 22:43:02 INFO  class:59 - In School Management Teacher Service
+2021-08-07 22:43:02 INFO  class:60 - In total Subject Marks Details Method
+2021-08-07 22:43:02 INFO  class:210 - In School Management Teacher DAO
+2021-08-07 22:43:02 INFO  class:211 - In Total Subject Marks Details Method
+2021-08-07 22:45:08 INFO  class:71 - In Teacher Application
+2021-08-07 22:45:12 INFO  class:53 - In School Management Teacher Controller
+2021-08-07 22:45:12 INFO  class:54 - In total Subject Marks Details Method
+2021-08-07 22:45:12 INFO  class:59 - In School Management Teacher Service
+2021-08-07 22:45:12 INFO  class:60 - In total Subject Marks Details Method
+2021-08-07 22:45:12 INFO  class:210 - In School Management Teacher DAO
+2021-08-07 22:45:12 INFO  class:211 - In Total Subject Marks Details Method
+2021-08-07 23:12:24 INFO  class:71 - In Teacher Application
+2021-08-07 23:12:31 INFO  class:53 - In School Management Teacher Controller
+2021-08-07 23:12:31 INFO  class:54 - In total Subject Marks Details Method
+2021-08-07 23:12:31 INFO  class:59 - In School Management Teacher Service
+2021-08-07 23:12:31 INFO  class:60 - In total Subject Marks Details Method
+2021-08-07 23:12:31 INFO  class:210 - In School Management Teacher DAO
+2021-08-07 23:12:31 INFO  class:211 - In Total Subject Marks Details Method
+2021-08-07 23:14:22 INFO  class:71 - In Teacher Application
+2021-08-07 23:14:28 INFO  class:53 - In School Management Teacher Controller
+2021-08-07 23:14:28 INFO  class:54 - In total Subject Marks Details Method
+2021-08-07 23:14:28 INFO  class:59 - In School Management Teacher Service
+2021-08-07 23:14:28 INFO  class:60 - In total Subject Marks Details Method
+2021-08-07 23:14:28 INFO  class:210 - In School Management Teacher DAO
+2021-08-07 23:14:28 INFO  class:211 - In Total Subject Marks Details Method
+2021-08-07 23:14:45 INFO  class:53 - In School Management Teacher Controller
+2021-08-07 23:14:45 INFO  class:54 - In total Subject Marks Details Method
+2021-08-07 23:14:45 INFO  class:59 - In School Management Teacher Service
+2021-08-07 23:14:45 INFO  class:60 - In total Subject Marks Details Method
+2021-08-07 23:14:45 INFO  class:210 - In School Management Teacher DAO
+2021-08-07 23:14:45 INFO  class:211 - In Total Subject Marks Details Method
+2021-08-07 23:15:02 WARN  class:295 - Cannot determine value type from string 'Indu'
+2021-08-07 23:17:16 INFO  class:71 - In Teacher Application
+2021-08-07 23:17:23 INFO  class:53 - In School Management Teacher Controller
+2021-08-07 23:17:23 INFO  class:54 - In total Subject Marks Details Method
+2021-08-07 23:17:23 INFO  class:59 - In School Management Teacher Service
+2021-08-07 23:17:23 INFO  class:60 - In total Subject Marks Details Method
+2021-08-07 23:17:23 INFO  class:210 - In School Management Teacher DAO
+2021-08-07 23:17:23 INFO  class:211 - In Total Subject Marks Details Method
+2021-08-07 23:17:52 INFO  class:53 - In School Management Teacher Controller
+2021-08-07 23:17:52 INFO  class:54 - In total Subject Marks Details Method
+2021-08-07 23:17:52 INFO  class:59 - In School Management Teacher Service
+2021-08-07 23:17:52 INFO  class:60 - In total Subject Marks Details Method
+2021-08-07 23:17:52 INFO  class:210 - In School Management Teacher DAO
+2021-08-07 23:17:52 INFO  class:211 - In Total Subject Marks Details Method

@@ -1,13 +1,13 @@
 package com.project.schoolsystem.client;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
 import com.project.schoolsystem.controller.StudentController;
-import com.project.schoolsystem.exceptions.ControllerException;
 import com.project.schoolsystem.exceptions.InvalidRollNoException;
 import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
 import com.project.schoolsystem.model.Student;
@@ -18,7 +18,7 @@ public class StudentApplication {
 		Scanner sc = new Scanner(System.in);
 		int number = sc.nextInt();
 		sc.nextLine();
-		int rollNo=0;
+		int rollNo = 0;
 		System.out.println("Adding Students Details");
 		for (int i = 0; i < number; i++) {
 			Student student = new Student();
@@ -38,25 +38,24 @@ public class StudentApplication {
 			rollNo = sc.nextInt();
 			sc.nextLine();
 			try {
-			if (rollNo < 1) {
-				throw new InvalidRollNoException("Roll NO is Invalid");
-			}
-			else {
-				student.setStudentRollNo(rollNo);
-				student.setStudentName(name);
-				student.setStudentDob(dob);
-				student.setStudentAddress(address);
-				student.setStudentStandard(standard);
-				student.setClassesRoomNo(roomNo);
-				student.setSchoolId(id);
-				studentController.addStudentDetails(student);	
-			}
-			}
-			catch(InvalidRollNoException e) {
+				if (rollNo < 1) {
+					throw new InvalidRollNoException("Roll NO is Invalid");
+				} else {
+					student.setStudentRollNo(rollNo);
+					student.setStudentName(name);
+					student.setStudentDob(dob);
+					student.setStudentAddress(address);
+					student.setStudentStandard(standard);
+					student.setClassesRoomNo(roomNo);
+					student.setSchoolId(id);
+					studentController.addStudentDetails(student);
+				}
+			} catch (InvalidRollNoException e) {
 				e.printStackTrace();
 			}
-		}if(rollNo>0) {
-		   System.out.println("Case 1: Adding Students Details is Completed");
+		}
+		if (rollNo > 0) {
+			System.out.println("Case 1: Adding Students Details is Completed");
 		}
 	}
 
@@ -64,7 +63,7 @@ public class StudentApplication {
 
 	static Logger logger = Logger.getLogger("StudentApplication.class");
 
-	public static void main(String args[])  {
+	public static void main(String args[]) {
 
 		logger.info("In Student Application");
 		while (true) {
@@ -74,70 +73,73 @@ public class StudentApplication {
 			System.out.println("2.======Retrieval======");
 			System.out.println("3.======Updation======");
 			System.out.println("4.======Deletion======");
+			System.out.println("5.======Student Parents Details======");
 			System.out.println("Enter your choice");
 			try {
-			Scanner scanner = new Scanner(System.in);
-			int userChoice = scanner.nextInt();
-			switch (userChoice) {
-			case 0: {
-				System.exit(0);
-				break;
-			}
-			case 1: {
-					addStudent();
-				    break;
-			}
-			case 2: {
-				System.out.println("Enter choice of retrieval");
-				Student student = new Student();
-				List<Student> studentList = new ArrayList<Student>();
-				Scanner sc = new Scanner(System.in);
-				int choice = sc.nextInt();
-				switch (choice) {
+				Scanner scanner = new Scanner(System.in);
+				int userChoice = scanner.nextInt();
+				switch (userChoice) {
+				case 0: {
+					System.exit(0);
+					break;
+				}
 				case 1: {
-					System.out.println("Reading All Student Details");
-					studentList = studentController.readAllStudentDetails();
-					for (Student s : studentList) {
-						System.out.println(s);
-					}
-					System.out.println("Case 2: Reading Students Details is Completed");
+					addStudent();
 					break;
 				}
 				case 2: {
-					System.out.println("Reading Student Details");
-					student = studentController.readStudentDetailsById();
-					System.out.println(student);
-					System.out.println("Case 2: Reading Student Details is Completed");
+					System.out.println("Enter choice of retrieval");
+					Student student = new Student();
+					List<Student> studentList = new ArrayList<Student>();
+					Scanner sc = new Scanner(System.in);
+					int choice = sc.nextInt();
+					switch (choice) {
+					case 1: {
+						System.out.println("Reading All Student Details");
+						studentList = studentController.readAllStudentDetails();
+						for (Student s : studentList) {
+							System.out.println(s);
+						}
+						System.out.println("Case 2: Reading Students Details is Completed");
+						break;
+					}
+					case 2: {
+						System.out.println("Reading Student Details");
+						student = studentController.readStudentDetailsById();
+						System.out.println(student);
+						System.out.println("Case 2: Reading Student Details is Completed");
+						break;
+					}
+					}
 					break;
 				}
-				}
-				break;
-			}
-			case 3: {
-				System.out.println("Updating Students Details");
+				case 3: {
+					System.out.println("Updating Students Details");
 					studentController.updateStudentDetails();
-				
-				System.out.println("Case 3: Updating Students Details is Completed");
-				break;
-			}
-			case 4: {
-				System.out.println("Deleting Student Details");
-				try {
-					studentController.deleteStudentDetails();
-				} catch (ControllerException e) {
-					e.getMessage();
-				}
-				System.out.println("Case 4: Deleting Students Details is Completed");
-				break;
-			}
-			default:
-				throw new InvalidUserChoiceException("User Choice is Invalid");
-			}
 
-		}
-			catch(InvalidUserChoiceException e) {
-				System.out.println(e.getMessage());
+					System.out.println("Case 3: Updating Students Details is Completed");
+					break;
+				}
+				case 4: {
+					System.out.println("Deleting Student Details");
+					studentController.deleteStudentDetails();
+
+					System.out.println("Case 4: Deleting Students Details is Completed");
+					break;
+				}
+				case 5: {
+					System.out.println("Student Parents Details");
+					studentController.studentParentsDetails();
+					System.out.println("Case 5:Retriving Student Parents Details is Completed");
+					break;
+				}
+				default:
+					throw new InvalidUserChoiceException("User Choice is Invalid");
+				}
+
+			} catch (InvalidUserChoiceException e) {
+				logger.warn(e.getMessage());
 			}
-	}
+		}
 	}
 }

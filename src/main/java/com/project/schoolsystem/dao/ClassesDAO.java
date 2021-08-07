@@ -1,9 +1,6 @@
 package com.project.schoolsystem.dao;
 
 import java.util.List;
-
-import com.project.schoolsystem.exceptions.InvalidRoomNoException;
-import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
 import com.project.schoolsystem.model.Classes;
 
 public interface ClassesDAO {
@@ -13,7 +10,7 @@ public interface ClassesDAO {
 
 	public Classes readClassesDetailsByRoomNo();
 
-	public void updateClassesDetails() throws InvalidRoomNoException, InvalidUserChoiceException;
+	public void updateClassesDetails();
 
-	public void deleteClassesDetails() ;
+	public void deleteClassesDetails();
 }

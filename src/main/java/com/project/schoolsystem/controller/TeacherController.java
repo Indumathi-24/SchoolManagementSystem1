@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
-
-import com.project.schoolsystem.exceptions.InvalidRollNoException;
-import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
 import com.project.schoolsystem.model.Teacher;
 import com.project.schoolsystem.service.TeacherService;
 import com.project.schoolsystem.service.TeacherServiceImpl;
@@ -14,16 +11,17 @@ import com.project.schoolsystem.service.TeacherServiceImpl;
 public class TeacherController {
 	TeacherService teacherServiceImpl = new TeacherServiceImpl();
 
-	static Logger logger=Logger.getLogger("SchoolManagementTeacherController.class");
+	static Logger logger = Logger.getLogger("TeacherController.class");
+
 	public void addTeacherDetails(Teacher teacher) {
 		logger.info("In School Management Teacher Controller");
-	    logger.info("In Add Teacher Details Method");
+		logger.info("In Add Teacher Details Method");
 		teacherServiceImpl.addTeacherDetails(teacher);
 	}
 
 	public List<Teacher> readAllTeacherDetails() {
-		 logger.info("In School Management Teacher Controller");
-		 logger.info("In Read All Teacher Details Method");
+		logger.info("In School Management Teacher Controller");
+		logger.info("In Read All Teacher Details Method");
 		List<Teacher> teacherList = new ArrayList<Teacher>();
 		teacherList = teacherServiceImpl.readAllTeacherDetails();
 
@@ -41,16 +39,22 @@ public class TeacherController {
 
 	}
 
-	public void updateTeacherDetails() throws InvalidRollNoException, InvalidUserChoiceException {
+	public void updateTeacherDetails() {
 		logger.info("In School Management Teacher Controller");
 		logger.info("In Update Teacher Details Method");
 		teacherServiceImpl.updateTeacherDetails();
 	}
 
-	public void deleteTeacherDetails() throws InvalidRollNoException {
-		 logger.info("In School Management Teacher Controller");
-		 logger.info("In Delete Teacher Details Method");
+	public void deleteTeacherDetails() {
+		logger.info("In School Management Teacher Controller");
+		logger.info("In Delete Teacher Details Method");
 		teacherServiceImpl.deleteTeacherDetails();
 	}
 
+	public void getSubjectMarks() {
+		logger.info("In School Management Teacher Controller");
+		logger.info("In total Subject Marks Details Method");
+		teacherServiceImpl.getSubjectMarks();
+
+	}
 }

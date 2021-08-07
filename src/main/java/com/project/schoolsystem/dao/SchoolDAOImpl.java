@@ -2,9 +2,9 @@ package com.project.schoolsystem.dao;
 
 import java.sql.Connection;
 
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
@@ -14,11 +14,11 @@ import com.project.schoolsystem.model.School;
 import com.project.schoolsystem.util.DBUtil;
 
 public class SchoolDAOImpl implements SchoolDAO {
-    static Logger logger=Logger.getLogger("SchoolDAOImpl.class");
+	static Logger logger = Logger.getLogger("SchoolDAOImpl.class");
 
 	public void addSchoolDetails(School school) {
-		 logger.info("In School DAO");
-		 logger.info("In Add School Details Method");
+		logger.info("In School DAO");
+		logger.info("In Add School Details Method");
 		try (Connection con = DBUtil.getConnection()) {
 			String query = "insert into School values(?,?,?)";
 			PreparedStatement pst = con.prepareStatement(query);
@@ -27,14 +27,14 @@ public class SchoolDAOImpl implements SchoolDAO {
 			pst.setString(3, school.getSchoolAddress());
 			pst.executeUpdate();
 			System.out.println("School Details Inserted");
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public School readSchoolDetails() {
-		 logger.info("In School DAO");
-		 logger.info("In Read All School Details Method");
+		logger.info("In School DAO");
+		logger.info("In Read All School Details Method");
 		School school = new School();
 		try (Connection con = DBUtil.getConnection()) {
 			Statement st = con.createStatement();
@@ -45,7 +45,7 @@ public class SchoolDAOImpl implements SchoolDAO {
 				school.setSchoolName(resultSet.getString(2));
 				school.setSchoolAddress(resultSet.getString(3));
 			}
-		} catch (Exception e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		System.out.println("School Details Retrieved");

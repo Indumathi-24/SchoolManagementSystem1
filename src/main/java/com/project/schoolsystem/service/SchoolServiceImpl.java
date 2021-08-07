@@ -9,15 +9,16 @@ import com.project.schoolsystem.model.School;
 public class SchoolServiceImpl implements SchoolService {
 	SchoolDAO schoolDAO = new SchoolDAOImpl();
 
-	static Logger logger=Logger.getLogger("SchoolServiceImpl.class");
+	static Logger logger = Logger.getLogger("SchoolServiceImpl.class");
+
 	public void addSchoolDetails(School school) {
-		 logger.info("In School Service");
-		 logger.info("In Add School Details Method");
+		logger.info("In School Service");
+		logger.info("In Add School Details Method");
 		schoolDAO.addSchoolDetails(school);
 	}
 
 	public School readSchoolDetails() {
-	    logger.info("In Read All School Details Method");
+		logger.info("In Read All School Details Method");
 		School school = new School();
 
 		school = schoolDAO.readSchoolDetails();

@@ -2,8 +2,6 @@ package com.project.schoolsystem.dao;
 
 import java.util.List;
 
-import com.project.schoolsystem.exceptions.InvalidRollNoException;
-import com.project.schoolsystem.exceptions.InvalidUserChoiceException;
 import com.project.schoolsystem.model.Student;
 
 public interface StudentDAO {
@@ -16,4 +14,6 @@ public interface StudentDAO {
 	public void updateStudentDetails();
 
 	public void deleteStudentDetails();
+
+	public void studentParentsDetails();
 }

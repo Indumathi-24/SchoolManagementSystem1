@@ -14,10 +14,11 @@ import com.project.schoolsystem.model.Subjects;
 public class SubjectsServiceImpl implements SubjectsService {
 	SubjectsDAO subjectsDAO = new SubjectsDAOImpl();
 
-	static Logger logger=Logger.getLogger("SubjectsServiceImpl.class");
+	static Logger logger = Logger.getLogger("SubjectsServiceImpl.class");
+
 	public void addSubjectsDetails(Subjects subjects) {
-		 logger.info("In Subjects Service");
-		 logger.info("In Add Subjects Details Method");
+		logger.info("In Subjects Service");
+		logger.info("In Add Subjects Details Method");
 		subjectsDAO.addSubjectsDetails(subjects);
 	}
 
@@ -42,16 +43,16 @@ public class SubjectsServiceImpl implements SubjectsService {
 
 	}
 
-	public void updateSubjectsDetails() throws InvalidUserChoiceException, InvalidIdException {
+	public void updateSubjectsDetails() {
 		logger.info("In Subjects Service");
-	    logger.info("In Update Subjects Details Method");
+		logger.info("In Update Subjects Details Method");
 		subjectsDAO.updateSubjectsDetails();
 
 	}
 
-	public void deleteSubjectsDetails() throws InvalidIdException {
+	public void deleteSubjectsDetails() {
 		logger.info("In Subjects Service");
-	    logger.info("In Delete Subjects Details Method");
+		logger.info("In Delete Subjects Details Method");
 		subjectsDAO.deleteSubjectsDetails();
 	}
 }
