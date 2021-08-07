@@ -209,7 +209,7 @@ public class TeacherDAOImpl implements TeacherDAO {
 
 	public void getSubjectMarks() {
 		logger.info("In School Management Teacher DAO");
-		logger.info("In Total Subject Marks Details Method");
+		logger.info("In Subject Marks Details Method");
 		try (Connection con = DBUtil.getConnection()) {
 			PreparedStatement pst = null;
 			Scanner scanner = new Scanner(System.in);

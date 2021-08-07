@@ -59,7 +59,7 @@ public class TeacherServiceImpl implements TeacherService {
 
 	public void getSubjectMarks() {
 		logger.info("In School Management Teacher Service");
-		logger.info("In total Subject Marks Details Method");
+		logger.info("In Subject Marks Details Method");
 		teacherDAO.getSubjectMarks();
 
 	}

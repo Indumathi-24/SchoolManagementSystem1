@@ -129,9 +129,9 @@ public class TeacherApplication {
 					break;
 				}
 				case 5: {
-					System.out.println("Total Subject Marks Details");
+					System.out.println("Subject Marks Details");
 					teacherController.getSubjectMarks();
-					System.out.println("Case 5: Calculating total Subject Marks Details is Completed");
+					System.out.println("Case 5: Retriving Subject Marks Details is Completed");
 					break;
 				}
 				default:

@@ -53,7 +53,7 @@ public class TeacherController {
 
 	public void getSubjectMarks() {
 		logger.info("In School Management Teacher Controller");
-		logger.info("In total Subject Marks Details Method");
+		logger.info("In  Subject Marks Details Method");
 		teacherServiceImpl.getSubjectMarks();
 
 	}
