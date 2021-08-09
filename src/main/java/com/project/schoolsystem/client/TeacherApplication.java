@@ -92,6 +92,8 @@ public class TeacherApplication {
 
 				case 2: {
 					System.out.println("Enter choice of retrieval");
+					System.out.println("1.All Teacher Details");
+					System.out.println("2.Teacher Detail by id");
 					Teacher teacher = new Teacher();
 					List<Teacher> teacherList = new ArrayList<Teacher>();
 					Scanner sn = new Scanner(System.in);

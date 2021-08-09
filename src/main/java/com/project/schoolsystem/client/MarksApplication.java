@@ -73,7 +73,6 @@ public class MarksApplication {
 			System.out.println("2.======Retrieval======");
 			System.out.println("3.======Updation======");
 			System.out.println("4.======Deletion======");
-			System.out.println("5.======Total marks Calculation======");
 			System.out.println("Enter your choice");
 			try {
 				Scanner scanner = new Scanner(System.in);
@@ -89,6 +88,8 @@ public class MarksApplication {
 				}
 				case 2: {
 					System.out.println("Enter choice of retrieval");
+					System.out.println("1.All Marks");
+					System.out.println("2.Marks by student roll no");
 					Marks marks = new Marks();
 					List<Marks> marksList = new ArrayList<Marks>();
 					Scanner sc = new Scanner(System.in);
@@ -123,12 +124,6 @@ public class MarksApplication {
 					System.out.println("Deleting Marks Details");
 					marksController.deleteMarksDetails();
 					System.out.println("Case 4: Deleting Markss Details is Completed");
-					break;
-				}
-				case 5: {
-					System.out.println("Total Marks Method");
-					marksController.totalMarksByStudentRollNo();
-					System.out.println("Case 5: Total Marks Calculating Method is Completed");
 					break;
 				}
 				default:

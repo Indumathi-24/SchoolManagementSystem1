@@ -14,5 +14,4 @@ public interface MarksService {
 
 	public void deleteMarksDetails();
 
-	public void totalMarksByStudentRollNo();
 }

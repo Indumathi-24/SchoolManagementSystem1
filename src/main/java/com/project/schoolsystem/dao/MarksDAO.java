@@ -14,5 +14,4 @@ public interface MarksDAO {
 
 	public void deleteMarksDetails();
 
-	public void totalMarksByStudentRollNo();
 }

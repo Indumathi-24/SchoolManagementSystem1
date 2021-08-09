@@ -203,7 +203,7 @@ public class StudentDAOImpl implements StudentDAO {
 			ResultSet rs = pst.executeQuery();
 			while (rs.next()) {
 				System.out
-						.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4));
+						.println("StudentRollNo"+" "+rs.getInt(1) + " " +" StudentName"+ " "+rs.getString(2) + " " +"Mother Name"+" "+ rs.getString(3) + " " +"Father Name"+" "+ rs.getString(4));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -8,6 +8,15 @@ public class Marks {
 	private Integer science;
 	private Integer socialScience;
 	private Integer evs;
+	private Integer totalMarks;
+
+	public Integer getTotalMarks() {
+		return totalMarks;
+	}
+
+	public void setTotalMarks(Integer totalMarks) {
+		this.totalMarks = totalMarks;
+	}
 
 	public Marks() {
 
@@ -69,14 +78,8 @@ public class Marks {
 		this.evs = evs;
 	}
 
-	@Override
-	public String toString() {
-		return "Marks [studentRollNo=" + studentRollNo + ", tamil=" + tamil + ", english=" + english + ", maths="
-				+ maths + ", science=" + science + ", socialScience=" + socialScience + ", evs=" + evs + "]";
-	}
-
 	public Marks(Integer studentRollNo, Integer tamil, Integer english, Integer maths, Integer science,
-			Integer socialScience, Integer evs) {
+			Integer socialScience, Integer evs, Integer totalMarks) {
 		super();
 		this.studentRollNo = studentRollNo;
 		this.tamil = tamil;
@@ -85,6 +88,15 @@ public class Marks {
 		this.science = science;
 		this.socialScience = socialScience;
 		this.evs = evs;
+		this.totalMarks = totalMarks;
 	}
 
+	@Override
+	public String toString() {
+		return "Marks [studentRollNo=" + studentRollNo + ", tamil=" + tamil + ", english=" + english + ", maths="
+				+ maths + ", science=" + science + ", socialScience=" + socialScience + ", evs=" + evs + ", totalMarks="
+				+ totalMarks + "]";
+	}
+
+	
 }

@@ -56,10 +56,4 @@ public class MarksServiceImpl implements MarksService {
 		logger.info("In Delete Marks Details Method");
 		marksDAO.deleteMarksDetails();
 	}
-
-	public void totalMarksByStudentRollNo() {
-		logger.info("In Marks Service");
-		logger.info("In total Marks Method");
-		marksDAO.totalMarksByStudentRollNo();
-	}
 }

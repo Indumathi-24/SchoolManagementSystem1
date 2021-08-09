@@ -89,6 +89,8 @@ public class StudentApplication {
 				}
 				case 2: {
 					System.out.println("Enter choice of retrieval");
+					System.out.println("All Student Details");
+					System.out.println("Student Detail by roll no");
 					Student student = new Student();
 					List<Student> studentList = new ArrayList<Student>();
 					Scanner sc = new Scanner(System.in);

@@ -52,10 +52,4 @@ public class MarksController {
 		marksServiceImpl.deleteMarksDetails();
 
 	}
-
-	public void totalMarksByStudentRollNo() {
-		logger.info("In Marks Service");
-		logger.info("In total Marks Method");
-		marksServiceImpl.totalMarksByStudentRollNo();
-	}
 }
