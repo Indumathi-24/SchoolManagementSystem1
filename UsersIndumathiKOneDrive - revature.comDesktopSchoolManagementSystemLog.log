@@ -1032,3 +1032,15 @@
 2021-08-09 21:36:34 INFO  class:60 - In Student Parents Details Method
 2021-08-09 21:36:34 INFO  class:197 - In Student DAO
 2021-08-09 21:36:34 INFO  class:198 - In Student Parents Details Method
+2021-08-10 20:04:40 INFO  class:68 - In Marks Application
+2021-08-10 20:04:45 INFO  class:44 - In Marks Controller
+2021-08-10 20:04:45 INFO  class:45 - In Update Marks Details Method
+2021-08-10 20:04:45 INFO  class:48 - In Marks Service
+2021-08-10 20:04:45 INFO  class:49 - In Update Marks Details Method
+2021-08-10 20:04:45 INFO  class:109 - In Marks DAO
+2021-08-10 20:04:45 INFO  class:110 - In Update Marks Details Method
+2021-08-10 20:05:03 INFO  class:25 - In Marks Controller
+2021-08-10 20:05:03 INFO  class:26 - In Read All Marks Details Method
+2021-08-10 20:05:03 INFO  class:27 - In Read All Marks Details Method
+2021-08-10 20:05:03 INFO  class:49 - In Marks DAO
+2021-08-10 20:05:03 INFO  class:50 - In Read All Marks Details Method

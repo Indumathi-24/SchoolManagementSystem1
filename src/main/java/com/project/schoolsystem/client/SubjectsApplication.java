@@ -72,6 +72,8 @@ public class SubjectsApplication {
 				}
 				case 2: {
 					System.out.print("Enter choice of retrieval:");
+					System.out.print("1.ALL subjects");
+					System.out.print("2.Particular Subject");
 					Subjects subjects = new Subjects();
 					List<Subjects> subjectsList = new ArrayList<Subjects>();
 					Scanner sc = new Scanner(System.in);
